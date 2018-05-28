@@ -1,0 +1,9 @@
+C:\DATA\WORKSHOP\EliteMart\EliteMart\EliteMart\bin\Debug\EliteMart.exe.config
+C:\DATA\WORKSHOP\EliteMart\EliteMart\EliteMart\bin\Debug\EliteMart.exe
+C:\DATA\WORKSHOP\EliteMart\EliteMart\EliteMart\bin\Debug\EliteMart.pdb
+C:\DATA\WORKSHOP\EliteMart\EliteMart\EliteMart\obj\Debug\EliteMart.csprojResolveAssemblyReference.cache
+C:\DATA\WORKSHOP\EliteMart\EliteMart\EliteMart\obj\Debug\EliteMart.Properties.Resources.resources
+C:\DATA\WORKSHOP\EliteMart\EliteMart\EliteMart\obj\Debug\EliteMart.csproj.GenerateResource.Cache
+C:\DATA\WORKSHOP\EliteMart\EliteMart\EliteMart\obj\Debug\EliteMart.exe
+C:\DATA\WORKSHOP\EliteMart\EliteMart\EliteMart\obj\Debug\EliteMart.pdb
+C:\DATA\WORKSHOP\EliteMart\EliteMart\EliteMart\obj\Debug\EliteMart.Manager.resources
