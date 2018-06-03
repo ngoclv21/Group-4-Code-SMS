@@ -33,8 +33,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +68,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppCode\Session.cs" />
+    <Compile Include="EF\AppDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AppDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\AppDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ChiTietHoaDon.cs">
+      <DependentUpon>AppDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ChiTietNhap.cs">
+      <DependentUpon>AppDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ChiTietXuat.cs">
+      <DependentUpon>AppDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\HangHoa.cs">
+      <DependentUpon>AppDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\HoaDon.cs">
+      <DependentUpon>AppDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\KhachHang.cs">
+      <DependentUpon>AppDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LoaiTaiKhoan.cs">
+      <DependentUpon>AppDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\NhaCungCap.cs">
+      <DependentUpon>AppDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PhieuNhapHang.cs">
+      <DependentUpon>AppDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\PhieuXuatHang.cs">
+      <DependentUpon>AppDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\sysdiagram.cs">
+      <DependentUpon>AppDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\TaiKhoan.cs">
+      <DependentUpon>AppDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,9 +134,67 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC\HoaDonUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\HoaDonUC.Designer.cs">
+      <DependentUpon>HoaDonUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\HomeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\HomeUC.Designer.cs">
+      <DependentUpon>HomeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\KhachHangUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\KhachHangUC.Designer.cs">
+      <DependentUpon>KhachHangUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\KhoHangUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\KhoHangUC.Designer.cs">
+      <DependentUpon>KhoHangUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\NhaCungCapUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\NhaCungCapUC.Designer.cs">
+      <DependentUpon>NhaCungCapUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\NhapHangUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\NhapHangUC.Designer.cs">
+      <DependentUpon>NhapHangUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\TaiKhoanUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\TaiKhoanUC.Designer.cs">
+      <DependentUpon>TaiKhoanUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ThongKeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ThongKeUC.Designer.cs">
+      <DependentUpon>ThongKeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\XuatHangUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\XuatHangUC.Designer.cs">
+      <DependentUpon>XuatHangUC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -65,7 +203,43 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UC\HoaDonUC.resx">
+      <DependentUpon>HoaDonUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\HomeUC.resx">
+      <DependentUpon>HomeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\KhachHangUC.resx">
+      <DependentUpon>KhachHangUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\KhoHangUC.resx">
+      <DependentUpon>KhoHangUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\NhaCungCapUC.resx">
+      <DependentUpon>NhaCungCapUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\NhapHangUC.resx">
+      <DependentUpon>NhapHangUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\TaiKhoanUC.resx">
+      <DependentUpon>TaiKhoanUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ThongKeUC.resx">
+      <DependentUpon>ThongKeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\XuatHangUC.resx">
+      <DependentUpon>XuatHangUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="EF\AppDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AppDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\AppDB.edmx.diagram">
+      <DependentUpon>AppDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -79,6 +253,25 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="EF\AppDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AppDB.edmx</DependentUpon>
+      <LastGenOutput>AppDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\AppDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AppDB.edmx</DependentUpon>
+      <LastGenOutput>AppDB.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\635341969517798917_background.jpg" />
+    <None Include="Resources\4k_material_red_dark-t2.jpg" />
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
