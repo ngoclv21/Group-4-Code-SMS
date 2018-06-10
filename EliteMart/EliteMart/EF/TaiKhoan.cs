@@ -19,6 +19,7 @@ namespace EliteMart.EF
         {
             this.HoaDons = new HashSet<HoaDon>();
             this.PhieuXuatHangs = new HashSet<PhieuXuatHang>();
+            this.PhieuNhapHangs = new HashSet<PhieuNhapHang>();
         }
     
         public string TenDangNhap { get; set; }
@@ -36,5 +37,7 @@ namespace EliteMart.EF
         public virtual LoaiTaiKhoan LoaiTaiKhoan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuXuatHang> PhieuXuatHangs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PhieuNhapHang> PhieuNhapHangs { get; set; }
     }
 }

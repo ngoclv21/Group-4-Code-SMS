@@ -24,9 +24,11 @@ namespace EliteMart.EF
         public string NguoiQuanLy { get; set; }
         public Nullable<int> MaNhaCungCap { get; set; }
         public Nullable<System.DateTime> NgayNhap { get; set; }
+        public Nullable<System.DateTime> NgayGiaoHang { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietNhap> ChiTietNhaps { get; set; }
         public virtual NhaCungCap NhaCungCap { get; set; }
+        public virtual TaiKhoan TaiKhoan { get; set; }
     }
 }

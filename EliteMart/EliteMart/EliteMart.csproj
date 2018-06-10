@@ -134,6 +134,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC\CreateNhapHangUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\CreateNhapHangUC.Designer.cs">
+      <DependentUpon>CreateNhapHangUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\CreateXuatHangUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\CreateXuatHangUC.Designer.cs">
+      <DependentUpon>CreateXuatHangUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\HoaDonUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -205,6 +217,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UC\CreateNhapHangUC.resx">
+      <DependentUpon>CreateNhapHangUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\CreateXuatHangUC.resx">
+      <DependentUpon>CreateXuatHangUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\HoaDonUC.resx">
       <DependentUpon>HoaDonUC.cs</DependentUpon>
     </EmbeddedResource>

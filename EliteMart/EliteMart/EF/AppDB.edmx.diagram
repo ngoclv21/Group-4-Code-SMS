@@ -28,6 +28,7 @@
         <AssociationConnector Association="EliteMartModel.FK__TaiKhoan__MaLoai__239E4DCF" ManuallyRouted="false" />
         <AssociationConnector Association="EliteMartModel.FK__PhieuNhap__MaNha__276EDEB3" ManuallyRouted="false" />
         <AssociationConnector Association="EliteMartModel.FK__PhieuXuat__Nguoi__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="EliteMartModel.FK__PhieuNhap__Nguoi__48CFD27E" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -17,8 +17,10 @@ namespace EliteMart
         {
             InitializeComponent();
             panel3.BringToFront();
-
-            pnContent.Controls.Add(new HomeUC());
+            HomeUC uc = new HomeUC();
+            uc.Width = pnContent.Width;
+            uc.Height = pnContent.Height;
+            pnContent.Controls.Add(uc);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -31,6 +33,8 @@ namespace EliteMart
             SidePanel.Height = btnHome.Height;
             SidePanel.Top = btnHome.Top;
             HomeUC uc = new HomeUC();
+            uc.Width = pnContent.Width;
+            uc.Height = pnContent.Height;
             pnContent.Controls.Clear();
             pnContent.Controls.Add(uc);
             uc.Show();
@@ -43,6 +47,8 @@ namespace EliteMart
             KhoHangUC uc = new KhoHangUC();
             pnContent.Controls.Clear();
             pnContent.Controls.Add(uc);
+            uc.Width = pnContent.Width;
+            uc.Height = pnContent.Height;
             uc.Show();
         }
 
@@ -51,6 +57,8 @@ namespace EliteMart
             SidePanel.Height = btnNhapHang.Height;
             SidePanel.Top = btnNhapHang.Top;
             NhapHangUC uc = new NhapHangUC();
+            uc.Width = pnContent.Width;
+            uc.Height = pnContent.Height;
             pnContent.Controls.Clear();
             pnContent.Controls.Add(uc);
             uc.Show();
@@ -61,6 +69,8 @@ namespace EliteMart
             SidePanel.Height = btnXuatHang.Height;
             SidePanel.Top = btnXuatHang.Top;
             XuatHangUC uc = new XuatHangUC();
+            uc.Width = pnContent.Width;
+            uc.Height = pnContent.Height;
             pnContent.Controls.Clear();
             pnContent.Controls.Add(uc);
             uc.Show();
@@ -71,6 +81,8 @@ namespace EliteMart
             SidePanel.Height = btnKhachHang.Height;
             SidePanel.Top = btnKhachHang.Top;
             KhachHangUC uc = new KhachHangUC();
+            uc.Width = pnContent.Width;
+            uc.Height = pnContent.Height;
             pnContent.Controls.Clear();
             pnContent.Controls.Add(uc);
             uc.Show();
@@ -81,6 +93,8 @@ namespace EliteMart
             SidePanel.Height = btnNhaCungCap.Height;
             SidePanel.Top = btnNhaCungCap.Top;
             NhaCungCapUC uc = new NhaCungCapUC();
+            uc.Width = pnContent.Width;
+            uc.Height = pnContent.Height;
             pnContent.Controls.Clear();
             pnContent.Controls.Add(uc);
             uc.Show();
@@ -91,6 +105,8 @@ namespace EliteMart
             SidePanel.Height = btnHoaDon.Height;
             SidePanel.Top = btnHoaDon.Top;
             HoaDonUC uc = new HoaDonUC();
+            uc.Width = pnContent.Width;
+            uc.Height = pnContent.Height;
             pnContent.Controls.Clear();
             pnContent.Controls.Add(uc);
             uc.Show();
@@ -101,6 +117,8 @@ namespace EliteMart
             SidePanel.Height = btnTaiKhoan.Height;
             SidePanel.Top = btnTaiKhoan.Top;
             TaiKhoanUC uc = new TaiKhoanUC();
+            uc.Width = pnContent.Width;
+            uc.Height = pnContent.Height;
             pnContent.Controls.Clear();
             pnContent.Controls.Add(uc);
             uc.Show();
@@ -111,6 +129,8 @@ namespace EliteMart
             SidePanel.Height = btnThongKe.Height;
             SidePanel.Top = btnThongKe.Top;
             ThongKeUC uc = new ThongKeUC();
+            uc.Width = pnContent.Width;
+            uc.Height = pnContent.Height;
             pnContent.Controls.Clear();
             pnContent.Controls.Add(uc);
             uc.Show();

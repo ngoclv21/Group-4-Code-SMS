@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.Entity;
 
 namespace EliteMart.UC
 {
-    public partial class XuatHangUC : UserControl
+    public partial class CreateXuatHangUC : UserControl
     {
-        public XuatHangUC()
+        public CreateXuatHangUC()
         {
             InitializeComponent();
         }
