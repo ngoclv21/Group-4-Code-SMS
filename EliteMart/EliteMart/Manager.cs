@@ -1,4 +1,5 @@
-﻿using EliteMart.UC;
+﻿using EliteMart.AppCode;
+using EliteMart.UC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace EliteMart
 {
-    public partial class Manager : Form
+    public partial class Manager : Form, Triggerable
     {
         public Manager()
         {
@@ -21,6 +22,7 @@ namespace EliteMart
             uc.Width = pnContent.Width;
             uc.Height = pnContent.Height;
             pnContent.Controls.Add(uc);
+            AppState.ManagerForm = this;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -134,6 +136,36 @@ namespace EliteMart
             pnContent.Controls.Clear();
             pnContent.Controls.Add(uc);
             uc.Show();
+        }
+
+        public void Trigger()
+        {
+            
+        }
+
+        public void Trigger(string screen)
+        {
+            switch (screen)
+            {
+                case ScreenName.CREATE_NHAP_HANG:
+                    CreateNhapHangUC uc = new CreateNhapHangUC();
+                    uc.Width = pnContent.Width;
+                    uc.Height = pnContent.Height;
+                    pnContent.Controls.Clear();
+                    pnContent.Controls.Add(uc);
+                    uc.Show();
+                    break;
+                case ScreenName.CREATE_XUAT_HANG:
+                    CreateXuatHangUC uc2 = new CreateXuatHangUC();
+                    uc2.Width = pnContent.Width;
+                    uc2.Height = pnContent.Height;
+                    pnContent.Controls.Clear();
+                    pnContent.Controls.Add(uc2);
+                    uc2.Show();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
