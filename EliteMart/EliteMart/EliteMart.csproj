@@ -33,15 +33,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.1.UI, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v17.1.Core, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.1.Extensions, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v17.1, Version=17.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -137,6 +147,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\HoaDonReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\HoaDonReport.Designer.cs">
+      <DependentUpon>HoaDonReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\NhapHangReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\NhapHangReport.Designer.cs">
+      <DependentUpon>NhapHangReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\XuatHangReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\XuatHangReport.Designer.cs">
+      <DependentUpon>XuatHangReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\CreateHoaDonUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\CreateHoaDonUC.Designer.cs">
+      <DependentUpon>CreateHoaDonUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\CreateNhapHangUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,6 +231,12 @@
     <Compile Include="UC\ThongKeUC.Designer.cs">
       <DependentUpon>ThongKeUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\ThongTinCaNhanUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ThongTinCaNhanUC.Designer.cs">
+      <DependentUpon>ThongTinCaNhanUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\XuatHangUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -220,6 +260,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report\HoaDonReport.resx">
+      <DependentUpon>HoaDonReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\NhapHangReport.resx">
+      <DependentUpon>NhapHangReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\XuatHangReport.resx">
+      <DependentUpon>XuatHangReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\CreateHoaDonUC.resx">
+      <DependentUpon>CreateHoaDonUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\CreateNhapHangUC.resx">
       <DependentUpon>CreateNhapHangUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +302,9 @@
     <EmbeddedResource Include="UC\ThongKeUC.resx">
       <DependentUpon>ThongKeUC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\ThongTinCaNhanUC.resx">
+      <DependentUpon>ThongTinCaNhanUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\XuatHangUC.resx">
       <DependentUpon>XuatHangUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +316,9 @@
       <DependentUpon>AppDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\EliteMart.EF.ChiTietHoaDon.datasource" />
+    <None Include="Properties\DataSources\EliteMart.EF.ChiTietNhap.datasource" />
+    <None Include="Properties\DataSources\EliteMart.EF.ChiTietXuat.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -285,6 +343,24 @@
       <DependentUpon>AppDB.edmx</DependentUpon>
       <LastGenOutput>AppDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-tranquil.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-socialive.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-sha-la-la.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-sexy-blue.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-roseanna.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-purple-love.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-pinky.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-piglet.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-pale-wood.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-mauve.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-lush.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-kashmir.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-green-beach.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-frost.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-cherry.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-a-lost-memory.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-almost.png" />
+    <None Include="Resources\beautiful-color-ui-gradients-backgrounds-50-shades-of-grey.png" />
     <None Include="Resources\635341969517798917_background.jpg" />
     <None Include="Resources\4k_material_red_dark-t2.jpg" />
     <None Include="Resources\background.jpg" />

@@ -10,5 +10,6 @@ namespace EliteMart.AppCode
     {
         void Trigger();
         void Trigger(string screen);
+        void Trigger(string screen, object o);
     }
 }

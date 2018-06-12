@@ -1,4 +1,5 @@
 ﻿using EliteMart.AppCode;
+using EliteMart.EF;
 using EliteMart.UC;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,10 @@ namespace EliteMart
         {
             InitializeComponent();
             panel3.BringToFront();
+            
+        }
+        private void Manager_Load(object sender, EventArgs e)
+        {
             HomeUC uc = new HomeUC();
             uc.Width = pnContent.Width;
             uc.Height = pnContent.Height;
@@ -137,7 +142,17 @@ namespace EliteMart
             pnContent.Controls.Add(uc);
             uc.Show();
         }
-
+        private void btnThongTinCaNhan_Click(object sender, EventArgs e)
+        {
+            SidePanel.Height = btnThongKe.Height;
+            SidePanel.Top = btnThongKe.Top;
+            ThongTinCaNhanUC uc = new ThongTinCaNhanUC();
+            uc.Width = pnContent.Width;
+            uc.Height = pnContent.Height;
+            pnContent.Controls.Clear();
+            pnContent.Controls.Add(uc);
+            uc.Show();
+        }
         public void Trigger()
         {
             
@@ -163,9 +178,52 @@ namespace EliteMart
                     pnContent.Controls.Add(uc2);
                     uc2.Show();
                     break;
+                case ScreenName.CREATE_HOA_DON:
+                    CreateHoaDonUC uc3 = new CreateHoaDonUC();
+                    uc3.Width = pnContent.Width;
+                    uc3.Height = pnContent.Height;
+                    pnContent.Controls.Clear();
+                    pnContent.Controls.Add(uc3);
+                    uc3.Show();
+                    break;
                 default:
                     break;
             }
         }
+
+        public void Trigger(string screen, object o)
+        {
+            switch (screen)
+            {
+                case ScreenName.CREATE_NHAP_HANG:
+                    CreateNhapHangUC uc = new CreateNhapHangUC((PhieuNhapHang)o);
+                    uc.Width = pnContent.Width;
+                    uc.Height = pnContent.Height;
+                    pnContent.Controls.Clear();
+                    pnContent.Controls.Add(uc);
+                    uc.Show();
+                    break;
+                case ScreenName.CREATE_XUAT_HANG:
+                    CreateXuatHangUC uc2 = new CreateXuatHangUC((PhieuXuatHang)o);
+                    uc2.Width = pnContent.Width;
+                    uc2.Height = pnContent.Height;
+                    pnContent.Controls.Clear();
+                    pnContent.Controls.Add(uc2);
+                    uc2.Show();
+                    break;
+                case ScreenName.CREATE_HOA_DON:
+                    CreateHoaDonUC uc3 = new CreateHoaDonUC((HoaDon)o);
+                    uc3.Width = pnContent.Width;
+                    uc3.Height = pnContent.Height;
+                    pnContent.Controls.Clear();
+                    pnContent.Controls.Add(uc3);
+                    uc3.Show();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        
     }
 }

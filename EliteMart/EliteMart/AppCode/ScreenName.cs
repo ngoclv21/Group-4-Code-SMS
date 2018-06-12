@@ -10,5 +10,6 @@ namespace EliteMart.AppCode
     {
         public const string CREATE_NHAP_HANG = "CreateNhapHang";
         public const string CREATE_XUAT_HANG = "CreateXuatHang";
+        public const string CREATE_HOA_DON = "CreateHoaDon";
     }
 }

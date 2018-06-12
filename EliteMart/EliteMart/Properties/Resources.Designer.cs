@@ -89,5 +89,185 @@ namespace EliteMart.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_50_shades_of_grey {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-50-shades-of-grey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_a_lost_memory {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-a-lost-memory", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_almost {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-almost", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_cherry {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-cherry", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_frost {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-frost", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_green_beach {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-green-beach", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_kashmir {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-kashmir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_lush {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-lush", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_mauve {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-mauve", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_pale_wood {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-pale-wood", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_piglet {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-piglet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_pinky {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-pinky", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_purple_love {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-purple-love", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_roseanna {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-roseanna", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_sexy_blue {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-sexy-blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_sha_la_la {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-sha-la-la", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_socialive {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-socialive", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beautiful_color_ui_gradients_backgrounds_tranquil {
+            get {
+                object obj = ResourceManager.GetObject("beautiful-color-ui-gradients-backgrounds-tranquil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

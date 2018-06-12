@@ -118,13 +118,67 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="635341969517798917_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\635341969517798917_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="4k_material_red_dark-t2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4k_material_red_dark-t2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="635341969517798917_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\635341969517798917_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="beautiful-color-ui-gradients-backgrounds-50-shades-of-grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-50-shades-of-grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-almost" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-almost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-a-lost-memory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-a-lost-memory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-cherry" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-cherry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-frost" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-frost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-green-beach" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-green-beach.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-kashmir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-kashmir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-lush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-lush.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-mauve" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-mauve.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-pale-wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-pale-wood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-piglet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-piglet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-pinky" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-pinky.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-purple-love" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-purple-love.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-roseanna" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-roseanna.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-sexy-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-sexy-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-sha-la-la" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-sha-la-la.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-socialive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-socialive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beautiful-color-ui-gradients-backgrounds-tranquil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beautiful-color-ui-gradients-backgrounds-tranquil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

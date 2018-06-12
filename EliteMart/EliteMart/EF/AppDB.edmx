@@ -45,6 +45,8 @@
           <Property Name="SoLuong" Type="int" />
           <Property Name="ThanhPhan" Type="nvarchar" MaxLength="255" />
           <Property Name="DonViTinh" Type="nvarchar" MaxLength="255" />
+          <Property Name="DonGiaNhap" Type="float" />
+          <Property Name="DonGiaXuat" Type="float" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
@@ -136,7 +138,9 @@
           <Property Name="MaLoaiTaiKhoan" Type="int" />
         </EntityType>
         <Association Name="FK__ChiTietHo__MaHan__33D4B598">
-          <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="0..1" />
+          <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HangHoa">
@@ -148,7 +152,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__ChiTietHo__MaHoa__32E0915F">
-          <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="0..1" />
+          <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="ChiTietHoaDon" Type="Self.ChiTietHoaDon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HoaDon">
@@ -160,7 +166,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__ChiTietNh__MaHan__2D27B809">
-          <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="0..1" />
+          <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="ChiTietNhap" Type="Self.ChiTietNhap" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HangHoa">
@@ -172,7 +180,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__ChiTietNh__MaPhi__2C3393D0">
-          <End Role="PhieuNhapHang" Type="Self.PhieuNhapHang" Multiplicity="0..1" />
+          <End Role="PhieuNhapHang" Type="Self.PhieuNhapHang" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="ChiTietNhap" Type="Self.ChiTietNhap" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PhieuNhapHang">
@@ -184,7 +194,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__ChiTietXu__MaHan__2F10007B">
-          <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="0..1" />
+          <End Role="HangHoa" Type="Self.HangHoa" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="ChiTietXuat" Type="Self.ChiTietXuat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HangHoa">
@@ -196,7 +208,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__ChiTietXu__MaPhi__2E1BDC42">
-          <End Role="PhieuXuatHang" Type="Self.PhieuXuatHang" Multiplicity="0..1" />
+          <End Role="PhieuXuatHang" Type="Self.PhieuXuatHang" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="ChiTietXuat" Type="Self.ChiTietXuat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PhieuXuatHang">
@@ -208,7 +222,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__HoaDon__NhanVien__31EC6D26">
-          <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+          <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TaiKhoan">
@@ -220,7 +236,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__PhieuNhap__MaNha__276EDEB3">
-          <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="0..1" />
+          <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PhieuNhapHang" Type="Self.PhieuNhapHang" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NhaCungCap">
@@ -246,7 +264,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__PhieuXuat__MaKha__2B3F6F97">
-          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PhieuXuatHang" Type="Self.PhieuXuatHang" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="KhachHang">
@@ -258,7 +278,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__PhieuXuat__Nguoi__2A4B4B5E">
-          <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+          <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PhieuXuatHang" Type="Self.PhieuXuatHang" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TaiKhoan">
@@ -270,7 +292,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__TaiKhoan__MaLoai__239E4DCF">
-          <End Role="LoaiTaiKhoan" Type="Self.LoaiTaiKhoan" Multiplicity="0..1" />
+          <End Role="LoaiTaiKhoan" Type="Self.LoaiTaiKhoan" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="LoaiTaiKhoan">
@@ -396,6 +420,8 @@
           <NavigationProperty Name="ChiTietHoaDons" Relationship="Self.FK__ChiTietHo__MaHan__33D4B598" FromRole="HangHoa" ToRole="ChiTietHoaDon" />
           <NavigationProperty Name="ChiTietNhaps" Relationship="Self.FK__ChiTietNh__MaHan__2D27B809" FromRole="HangHoa" ToRole="ChiTietNhap" />
           <NavigationProperty Name="ChiTietXuats" Relationship="Self.FK__ChiTietXu__MaHan__2F10007B" FromRole="HangHoa" ToRole="ChiTietXuat" />
+          <Property Name="DonGiaNhap" Type="Double" />
+          <Property Name="DonGiaXuat" Type="Double" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
@@ -751,6 +777,8 @@
           <EntitySetMapping Name="HangHoas">
             <EntityTypeMapping TypeName="EliteMartModel.HangHoa">
               <MappingFragment StoreEntitySet="HangHoa">
+                <ScalarProperty Name="DonGiaXuat" ColumnName="DonGiaXuat" />
+                <ScalarProperty Name="DonGiaNhap" ColumnName="DonGiaNhap" />
                 <ScalarProperty Name="MaHangHoa" ColumnName="MaHangHoa" />
                 <ScalarProperty Name="TenHangHoa" ColumnName="TenHangHoa" />
                 <ScalarProperty Name="DonGia" ColumnName="DonGia" />

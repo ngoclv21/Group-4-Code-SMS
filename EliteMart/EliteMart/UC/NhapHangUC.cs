@@ -67,6 +67,15 @@ namespace EliteMart.UC
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            try
+            {
+                PhieuNhapHang phieuNhapHang = db.PhieuNhapHangs.Find(int.Parse(lblMaPhieuNhap.Text));
+                AppState.ManagerForm.Trigger(ScreenName.CREATE_NHAP_HANG, phieuNhapHang);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Có lỗi xảy ra");
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -133,7 +142,8 @@ namespace EliteMart.UC
 
         private void btnChiTiet_Click(object sender, EventArgs e)
         {
-            NhapHangReport report = new NhapHangReport();
+            PhieuNhapHang phieuNhapHang = db.PhieuNhapHangs.Find(int.Parse(lblMaPhieuNhap.Text));
+            NhapHangReport report = new NhapHangReport(phieuNhapHang);
             ReportPrintTool printTool = new ReportPrintTool(report);
             printTool.ShowPreview();
         }

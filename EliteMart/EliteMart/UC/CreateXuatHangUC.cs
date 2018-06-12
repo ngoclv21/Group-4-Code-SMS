@@ -13,12 +13,20 @@ namespace EliteMart.UC
 {
     public partial class CreateXuatHangUC : UserControl
     {
+        PhieuXuatHang phieuXuatHang = null;
         public CreateXuatHangUC()
         {
             InitializeComponent();
         }
 
-       
+        public CreateXuatHangUC(PhieuXuatHang phieuXuatHang)
+        {
+            InitializeComponent();
+            this.phieuXuatHang = phieuXuatHang;
+            chiTietXuats = phieuXuatHang.ChiTietXuats.ToList();
+        }
+
+
         private AppDB db = new AppDB();
         private BindingSource bds = new BindingSource();
         private List<ChiTietXuat> chiTietXuats = new List<ChiTietXuat>();
@@ -81,7 +89,7 @@ namespace EliteMart.UC
                 HangHoa hangHoa = db.HangHoas.Find(int.Parse(txtHangHoa.Text.Split('-')[0]));
                 chiTietXuat.HangHoa = hangHoa;
                 chiTietXuat.MaHangHoa = hangHoa.MaHangHoa;
-                chiTietXuat.DonGia = hangHoa.DonGia;
+                chiTietXuat.DonGia = hangHoa.DonGiaXuat;
                 chiTietXuats.Add(chiTietXuat);
                 LoadDtgv();
             }
@@ -94,25 +102,52 @@ namespace EliteMart.UC
 
         private void btnRemoveRow_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int index = dtgv.SelectedRows[0].Index;
+                chiTietXuats.RemoveAt(index);
+                LoadDtgv();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void btnTaoPhieuXuat_Click(object sender, EventArgs e)
         {
-            try
+            PhieuXuatHang xuatHang = null;
+            if (this.phieuXuatHang == null)
             {
-                PhieuXuatHang XuatHang = new PhieuXuatHang();
-                XuatHang.KhachHang.MaKhachHang = (int)cbxKhachHang.SelectedValue;
-                XuatHang.NguoiQuanLy = txtNguoiXuat.Text.Split('-')[0];
-                XuatHang.NgayXuat = dtpkNgayXuat.Value;
-                XuatHang.ChiTietXuats = chiTietXuats;
-                db.PhieuXuatHangs.Add(XuatHang);
+                xuatHang = new PhieuXuatHang();
+                xuatHang.MaKhachHang = (int)cbxKhachHang.SelectedValue;
+                xuatHang.NguoiQuanLy = txtNguoiXuat.Text.Split('-')[0].Trim();
+                TaiKhoan quanLy = db.TaiKhoans.Find(xuatHang.NguoiQuanLy);
+                xuatHang.TaiKhoan = quanLy;
+                xuatHang.NgayXuat = dtpkNgayXuat.Value;
+                xuatHang.ChiTietXuats = chiTietXuats;
+                db.PhieuXuatHangs.Add(xuatHang);
                 db.SaveChanges();
-                MessageBox.Show("Tạo thành công phiếu nhập hàng");
+                MessageBox.Show("Tạo thành công phiếu xuất hàng");
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Có lỗi xảy ra!!!");
+                xuatHang = db.PhieuXuatHangs.Find(phieuXuatHang.MaPhieuXuatHang);
+                xuatHang.MaKhachHang = (int)cbxKhachHang.SelectedValue;
+                xuatHang.NguoiQuanLy = txtNguoiXuat.Text.Split('-')[0].Trim();
+                TaiKhoan quanLy = db.TaiKhoans.Find(xuatHang.NguoiQuanLy);
+                xuatHang.TaiKhoan = quanLy;
+                xuatHang.NgayXuat = dtpkNgayXuat.Value;
+                xuatHang.ChiTietXuats = new List<ChiTietXuat>();
+                foreach (var item in chiTietXuats)
+                {
+                    if (item.MaChiTietXuat == 0)
+                    {
+                        xuatHang.ChiTietXuats.Add(item);
+                    }
+                }
+                db.SaveChanges();
+                MessageBox.Show("Cập nhật thành công");
             }
         }
     }

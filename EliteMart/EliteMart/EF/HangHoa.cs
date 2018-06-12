@@ -28,6 +28,8 @@ namespace EliteMart.EF
         public Nullable<int> SoLuong { get; set; }
         public string ThanhPhan { get; set; }
         public string DonViTinh { get; set; }
+        public Nullable<double> DonGiaNhap { get; set; }
+        public Nullable<double> DonGiaXuat { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }

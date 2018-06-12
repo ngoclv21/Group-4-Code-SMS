@@ -13,9 +13,20 @@ namespace EliteMart.UC
 {
     public partial class CreateNhapHangUC : UserControl
     {
+        PhieuNhapHang phieuNhapHang = null;
         public CreateNhapHangUC()
         {
             InitializeComponent();
+        }
+
+        public CreateNhapHangUC(PhieuNhapHang phieuNhapHang)
+        {
+            InitializeComponent();
+            this.phieuNhapHang = phieuNhapHang;
+
+            lblTitle.Text = lblTitle.Text + "  " + phieuNhapHang.MaPhieuNhapHang;
+            btnTaoPhieuNhap.Text = "Cập nhật";
+
         }
 
         private AppDB db = new AppDB();
@@ -24,10 +35,33 @@ namespace EliteMart.UC
 
         private void CreateNhapHangUC_Load(object sender, EventArgs e)
         {
+            if (phieuNhapHang != null)
+            {
+                chiTietNhaps = phieuNhapHang.ChiTietNhaps.ToList();
+            }
             LoadDtgv();
             LoadMore();
             dtgv.DataSource = bds;
             ChangHeader();
+
+            if (phieuNhapHang != null)
+            {
+                for (int i = 0; i < cbxNhaCungCap.Items.Count; i++)
+                {
+                    if ((cbxNhaCungCap.Items[i] as NhaCungCap).MaNhaCungCap == phieuNhapHang.MaNhaCungCap)
+                    {
+                        cbxNhaCungCap.SelectedIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            txtNguoiNhap.Text = phieuNhapHang.NguoiQuanLy + "-" + phieuNhapHang.TaiKhoan.HoTen;
+            if (phieuNhapHang.NgayNhap != null)
+            {
+                dtpkNhayNhap.Value = phieuNhapHang.NgayNhap.Value;
+            }
+
         }
         public void ChangHeader()
         {
@@ -39,7 +73,7 @@ namespace EliteMart.UC
 
         public void LoadDtgv()
         {
-            bds.DataSource = chiTietNhaps.Select(x => new {x.MaHangHoa, x.HangHoa.TenHangHoa, x.SoLuong, x.DonGia }).ToList();
+            bds.DataSource = chiTietNhaps.Select(x => new { x.MaHangHoa, x.HangHoa.TenHangHoa, x.SoLuong, x.DonGia }).ToList();
         }
         public void LoadMore()
         {
@@ -80,7 +114,7 @@ namespace EliteMart.UC
                 HangHoa hangHoa = db.HangHoas.Find(int.Parse(txtHangHoa.Text.Split('-')[0]));
                 chiTietNhap.HangHoa = hangHoa;
                 chiTietNhap.MaHangHoa = hangHoa.MaHangHoa;
-                chiTietNhap.DonGia = hangHoa.DonGia;
+                chiTietNhap.DonGia = hangHoa.DonGiaNhap;
                 chiTietNhaps.Add(chiTietNhap);
                 LoadDtgv();
             }
@@ -88,26 +122,64 @@ namespace EliteMart.UC
             {
                 MessageBox.Show("Có lỗi xảy ra!!!");
             }
-            
+
         }
 
         private void btnRemoveRow_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int index = dtgv.SelectedRows[0].Index;
+                chiTietNhaps.RemoveAt(index);
+                LoadDtgv();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void btnTaoPhieuNhap_Click(object sender, EventArgs e)
         {
             try
             {
-                PhieuNhapHang nhapHang = new PhieuNhapHang();
-                nhapHang.MaNhaCungCap = (int)cbxNhaCungCap.SelectedValue;
-                nhapHang.NguoiQuanLy = txtNguoiNhap.Text.Split('-')[0];
-                nhapHang.NgayNhap = dtpkNhayNhap.Value;
-                nhapHang.ChiTietNhaps = chiTietNhaps;
-                db.PhieuNhapHangs.Add(nhapHang);
-                db.SaveChanges();
-                MessageBox.Show("Tạo thành công phiếu nhập hàng");
+                PhieuNhapHang nhapHang = null;
+                if (this.phieuNhapHang == null)
+                {
+                    nhapHang = new PhieuNhapHang();
+                    nhapHang.MaNhaCungCap = (int)cbxNhaCungCap.SelectedValue;
+                    nhapHang.NguoiQuanLy = txtNguoiNhap.Text.Split('-')[0].Trim();
+                    TaiKhoan quanLy = db.TaiKhoans.Find(nhapHang.NguoiQuanLy);
+                    nhapHang.TaiKhoan = quanLy;
+                    nhapHang.NgayNhap = dtpkNhayNhap.Value;
+                    nhapHang.ChiTietNhaps = chiTietNhaps;
+                    db.PhieuNhapHangs.Add(nhapHang);
+                    db.SaveChanges();
+                    MessageBox.Show("Tạo thành công phiếu nhập hàng");
+                }
+                else
+                {
+                    nhapHang = db.PhieuNhapHangs.Find(phieuNhapHang.MaPhieuNhapHang);
+                    nhapHang.MaNhaCungCap = (int)cbxNhaCungCap.SelectedValue;
+                    nhapHang.NguoiQuanLy = txtNguoiNhap.Text.Split('-')[0].Trim();
+                    TaiKhoan quanLy = db.TaiKhoans.Find(nhapHang.NguoiQuanLy);
+                    nhapHang.TaiKhoan = quanLy;
+                    nhapHang.NgayNhap = dtpkNhayNhap.Value;
+
+                    nhapHang.ChiTietNhaps = new List<ChiTietNhap>();
+                    foreach (var item in chiTietNhaps)
+                    {
+                        if (item.MaChiTietNhap == 0)
+                        {
+                            nhapHang.ChiTietNhaps.Add(item);
+                        }
+                    }
+                    db.SaveChanges();
+                    MessageBox.Show("Cập nhật thành công");
+                }
+
+
+
             }
             catch (Exception)
             {
@@ -115,6 +187,6 @@ namespace EliteMart.UC
             }
         }
 
-        
+
     }
 }
