@@ -46,6 +46,7 @@ namespace EliteMart.UC
 
             if (phieuNhapHang != null)
             {
+                txtNguoiNhap.Text = phieuNhapHang.NguoiQuanLy + "-" + phieuNhapHang.TaiKhoan.HoTen;
                 for (int i = 0; i < cbxNhaCungCap.Items.Count; i++)
                 {
                     if ((cbxNhaCungCap.Items[i] as NhaCungCap).MaNhaCungCap == phieuNhapHang.MaNhaCungCap)
@@ -54,11 +55,6 @@ namespace EliteMart.UC
                         break;
                     }
                 }
-            }
-
-            txtNguoiNhap.Text = phieuNhapHang.NguoiQuanLy + "-" + phieuNhapHang.TaiKhoan.HoTen;
-            if (phieuNhapHang.NgayNhap != null)
-            {
                 dtpkNhayNhap.Value = phieuNhapHang.NgayNhap.Value;
             }
 

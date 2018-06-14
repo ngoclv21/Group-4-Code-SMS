@@ -88,6 +88,11 @@ namespace EliteMart.UC
             if (confirmResult == DialogResult.Yes)
             {
                 PhieuXuatHang phieuXuatHang = db.PhieuXuatHangs.Find(int.Parse(lblMaPhieuXuat.Text));
+                if (phieuXuatHang.NgayGiaoHang != null)
+                {
+                    MessageBox.Show("Không thể xóa một đơn hàng đã được giao");
+                    return;
+                }
                 try
                 {
                     db.PhieuXuatHangs.Remove(phieuXuatHang);

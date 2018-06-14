@@ -37,7 +37,13 @@
             this.lblDoanhThu = new System.Windows.Forms.Label();
             this.lblHoaDon = new System.Windows.Forms.Label();
             this.lblXuatHang = new System.Windows.Forms.Label();
+            this.lblBestDonXuat = new System.Windows.Forms.Label();
+            this.lblBestBanLe = new System.Windows.Forms.Label();
+            this.lblBestName = new System.Windows.Forms.Label();
             this.lblNhapHang = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnTKTheoNam = new System.Windows.Forms.Button();
@@ -45,6 +51,12 @@
             this.btnTkTheoThang = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblWostName = new System.Windows.Forms.Label();
+            this.lblWorstBanLe = new System.Windows.Forms.Label();
+            this.lblWorstDonXuat = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,7 +83,19 @@
             this.panel2.Controls.Add(this.lblDoanhThu);
             this.panel2.Controls.Add(this.lblHoaDon);
             this.panel2.Controls.Add(this.lblXuatHang);
+            this.panel2.Controls.Add(this.lblWorstDonXuat);
+            this.panel2.Controls.Add(this.lblBestDonXuat);
+            this.panel2.Controls.Add(this.lblWorstBanLe);
+            this.panel2.Controls.Add(this.lblBestBanLe);
+            this.panel2.Controls.Add(this.lblWostName);
+            this.panel2.Controls.Add(this.lblBestName);
             this.panel2.Controls.Add(this.lblNhapHang);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnTKTheoNam);
@@ -167,6 +191,42 @@
             this.lblXuatHang.TabIndex = 43;
             this.lblXuatHang.Text = "[]";
             // 
+            // lblBestDonXuat
+            // 
+            this.lblBestDonXuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblBestDonXuat.AutoSize = true;
+            this.lblBestDonXuat.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBestDonXuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.lblBestDonXuat.Location = new System.Drawing.Point(1058, 267);
+            this.lblBestDonXuat.Name = "lblBestDonXuat";
+            this.lblBestDonXuat.Size = new System.Drawing.Size(37, 39);
+            this.lblBestDonXuat.TabIndex = 43;
+            this.lblBestDonXuat.Text = "[]";
+            // 
+            // lblBestBanLe
+            // 
+            this.lblBestBanLe.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblBestBanLe.AutoSize = true;
+            this.lblBestBanLe.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBestBanLe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.lblBestBanLe.Location = new System.Drawing.Point(1058, 214);
+            this.lblBestBanLe.Name = "lblBestBanLe";
+            this.lblBestBanLe.Size = new System.Drawing.Size(37, 39);
+            this.lblBestBanLe.TabIndex = 43;
+            this.lblBestBanLe.Text = "[]";
+            // 
+            // lblBestName
+            // 
+            this.lblBestName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblBestName.AutoSize = true;
+            this.lblBestName.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBestName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.lblBestName.Location = new System.Drawing.Point(1020, 160);
+            this.lblBestName.Name = "lblBestName";
+            this.lblBestName.Size = new System.Drawing.Size(37, 39);
+            this.lblBestName.TabIndex = 43;
+            this.lblBestName.Text = "[]";
+            // 
             // lblNhapHang
             // 
             this.lblNhapHang.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -178,6 +238,42 @@
             this.lblNhapHang.Size = new System.Drawing.Size(37, 39);
             this.lblNhapHang.TabIndex = 43;
             this.lblNhapHang.Text = "[]";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.label11.Location = new System.Drawing.Point(698, 267);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(335, 39);
+            this.label11.TabIndex = 43;
+            this.label11.Text = "Số lượng theo đơn xuất:";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.label7.Location = new System.Drawing.Point(698, 214);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(228, 39);
+            this.label7.TabIndex = 43;
+            this.label7.Text = "Số lượng bán lẻ:";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.label5.Location = new System.Drawing.Point(660, 160);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(344, 39);
+            this.label5.TabIndex = 43;
+            this.label5.Text = "Sản phẩm bán chạy nhất:";
             // 
             // label2
             // 
@@ -273,6 +369,78 @@
             this.label9.TabIndex = 43;
             this.label9.Text = "THỐNG KÊ";
             // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.label8.Location = new System.Drawing.Point(660, 330);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(341, 39);
+            this.label8.TabIndex = 43;
+            this.label8.Text = "Sản phẩm bán kém nhất:";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.label10.Location = new System.Drawing.Point(698, 384);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(228, 39);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Số lượng bán lẻ:";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.label12.Location = new System.Drawing.Point(698, 437);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(335, 39);
+            this.label12.TabIndex = 43;
+            this.label12.Text = "Số lượng theo đơn xuất:";
+            // 
+            // lblWostName
+            // 
+            this.lblWostName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblWostName.AutoSize = true;
+            this.lblWostName.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWostName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.lblWostName.Location = new System.Drawing.Point(1020, 330);
+            this.lblWostName.Name = "lblWostName";
+            this.lblWostName.Size = new System.Drawing.Size(37, 39);
+            this.lblWostName.TabIndex = 43;
+            this.lblWostName.Text = "[]";
+            // 
+            // lblWorstBanLe
+            // 
+            this.lblWorstBanLe.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblWorstBanLe.AutoSize = true;
+            this.lblWorstBanLe.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWorstBanLe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.lblWorstBanLe.Location = new System.Drawing.Point(1058, 384);
+            this.lblWorstBanLe.Name = "lblWorstBanLe";
+            this.lblWorstBanLe.Size = new System.Drawing.Size(37, 39);
+            this.lblWorstBanLe.TabIndex = 43;
+            this.lblWorstBanLe.Text = "[]";
+            // 
+            // lblWorstDonXuat
+            // 
+            this.lblWorstDonXuat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblWorstDonXuat.AutoSize = true;
+            this.lblWorstDonXuat.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWorstDonXuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(8)))), ((int)(((byte)(55)))));
+            this.lblWorstDonXuat.Location = new System.Drawing.Point(1058, 437);
+            this.lblWorstDonXuat.Name = "lblWorstDonXuat";
+            this.lblWorstDonXuat.Size = new System.Drawing.Size(37, 39);
+            this.lblWorstDonXuat.TabIndex = 43;
+            this.lblWorstDonXuat.Text = "[]";
+            // 
             // ThongKeUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -310,5 +478,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTonKho;
+        private System.Windows.Forms.Label lblBestName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblBestDonXuat;
+        private System.Windows.Forms.Label lblBestBanLe;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblWorstDonXuat;
+        private System.Windows.Forms.Label lblWorstBanLe;
+        private System.Windows.Forms.Label lblWostName;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label8;
     }
 }

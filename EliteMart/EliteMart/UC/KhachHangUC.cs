@@ -75,7 +75,7 @@ namespace EliteMart.UC
                 customer.DiaChi = txtDiaChi.Text;
                 customer.QueQuan = txtQueQuan.Text;
                 customer.SoDienThoai = txtSoDienThoai.Text;
-                customer.GioiTinh = cbxGioiTinh.Text == "Nam" ? true : false;
+                customer.GioiTinh = cbxGioiTinh.Text == "Nam" ? false : true;
 
                 db.KhachHangs.Add(customer);
                 db.SaveChanges();
@@ -98,7 +98,7 @@ namespace EliteMart.UC
                 customer.DiaChi = txtDiaChi.Text;
                 customer.QueQuan = txtQueQuan.Text;
                 customer.SoDienThoai = txtSoDienThoai.Text;
-                customer.GioiTinh = cbxGioiTinh.Text == "Nam" ? true : false;
+                customer.GioiTinh = cbxGioiTinh.Text == "Nam" ? false : true;
                 db.SaveChanges();
                 MessageBox.Show("Cập nhật thành công");
                 LoadDtgv();

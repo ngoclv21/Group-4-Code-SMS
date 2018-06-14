@@ -28,11 +28,41 @@ namespace EliteMart
             uc.Height = pnContent.Height;
             pnContent.Controls.Add(uc);
             AppState.ManagerForm = this;
+            CheckRole();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void CheckRole()
+        {
+            try
+            {
+                int maLoaiTaiKhoan = Session.LoginAccount.MaLoaiTaiKhoan.Value;
+                switch (maLoaiTaiKhoan)
+                {
+                    case Role.NHAN_VIEN:
+                        btnThongKe.Visible = false;
+                        btnTaiKhoan.Visible = false;
+                        btnNhaCungCap.Visible = false;
+                        btnXuatHang.Visible = false;
+                        btnNhapHang.Visible = false;
+                        break;
+                    case Role.THU_KHO:
+                        btnThongKe.Visible = false;
+                        btnTaiKhoan.Visible = false;
+                        btnNhaCungCap.Visible = false;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception)
+            {
+                
+            }
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -144,8 +174,8 @@ namespace EliteMart
         }
         private void btnThongTinCaNhan_Click(object sender, EventArgs e)
         {
-            SidePanel.Height = btnThongKe.Height;
-            SidePanel.Top = btnThongKe.Top;
+            SidePanel.Height = btnThongTinCaNhan.Height;
+            SidePanel.Top = btnThongTinCaNhan.Top;
             ThongTinCaNhanUC uc = new ThongTinCaNhanUC();
             uc.Width = pnContent.Width;
             uc.Height = pnContent.Height;

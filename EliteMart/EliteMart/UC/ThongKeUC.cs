@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EliteMart.EF;
+using EliteMart.AppCode;
 
 namespace EliteMart.UC
 {
@@ -101,6 +102,35 @@ namespace EliteMart.UC
             lblHoaDon.Text = hoaDon.ToString("#,###", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"));
             lblDoanhThu.Text = doanhThu.ToString("#,###", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"));
             lblTonKho.Text = tonKho.ToString("#,###", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"));
+
+            string sanPhamBanChay = "";
+            int soLuongBanLe = 0;
+            int soLuongTheoDonXuat = 0;
+
+            List<SanPhamThongKeModel> list = new List<SanPhamThongKeModel>();
+            foreach (var hangHoa in db.HangHoas.ToList())
+            {
+                SanPhamThongKeModel model = new SanPhamThongKeModel();
+                model.SanPham = hangHoa;
+                model.SoLuongBanLe = hangHoa.ChiTietHoaDons.Where(x=> x.HoaDon.NgayLap != null && x.HoaDon.NgayLap.Value >= startDate && x.HoaDon.NgayLap < endDate).Sum(x => x.SoLuong.Value);
+                model.SoLuongTheoPhieuXuat = hangHoa.ChiTietXuats.Where(x => x.PhieuXuatHang.NgayGiaoHang != null && x.PhieuXuatHang.NgayGiaoHang.Value >= startDate && x.PhieuXuatHang.NgayGiaoHang < endDate).Sum(x => x.SoLuong.Value);
+                model.Tong = model.SoLuongTheoPhieuXuat + model.SoLuongBanLe;
+                list.Add(model);
+
+            }
+
+
+            list.Sort();
+            SanPhamThongKeModel best = list.First();
+            SanPhamThongKeModel worst = list.Last();
+            lblBestName.Text = best.SanPham.TenHangHoa;
+            lblBestBanLe.Text = best.SoLuongBanLe.ToString();
+            lblBestDonXuat.Text = best.SoLuongTheoPhieuXuat.ToString();
+
+            lblWostName.Text = worst.SanPham.TenHangHoa;
+            lblWorstBanLe.Text = worst.SoLuongBanLe.ToString();
+            lblWorstDonXuat.Text = worst.SoLuongTheoPhieuXuat.ToString();
+
         }
 
         public ThongKeUC()

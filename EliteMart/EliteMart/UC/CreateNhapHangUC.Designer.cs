@@ -113,7 +113,7 @@
             this.btnTaoPhieuNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaoPhieuNhap.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaoPhieuNhap.ForeColor = System.Drawing.Color.White;
-            this.btnTaoPhieuNhap.Location = new System.Drawing.Point(1002, 139);
+            this.btnTaoPhieuNhap.Location = new System.Drawing.Point(1002, 106);
             this.btnTaoPhieuNhap.Name = "btnTaoPhieuNhap";
             this.btnTaoPhieuNhap.Size = new System.Drawing.Size(186, 42);
             this.btnTaoPhieuNhap.TabIndex = 41;

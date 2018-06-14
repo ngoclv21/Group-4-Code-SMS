@@ -79,6 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppCode\AppState.cs" />
+    <Compile Include="AppCode\SanPhamThongKeModel.cs" />
+    <Compile Include="AppCode\Role.cs" />
     <Compile Include="AppCode\ScreenName.cs" />
     <Compile Include="AppCode\Session.cs" />
     <Compile Include="AppCode\Triggerable.cs" />

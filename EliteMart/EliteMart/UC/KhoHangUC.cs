@@ -118,10 +118,10 @@ namespace EliteMart.UC
 
             if (confirmResult == DialogResult.Yes)
             {
-                TaiKhoan account = db.TaiKhoans.Find(txtMaHangHoa.Text);
+                HangHoa hangHoa = db.HangHoas.Find(int.Parse(txtMaHangHoa.Text));
                 try
                 {
-                    db.TaiKhoans.Remove(account);
+                    db.HangHoas.Remove(hangHoa);
                     db.SaveChanges();
                     MessageBox.Show("Xóa thành công");
                     LoadDtgv();

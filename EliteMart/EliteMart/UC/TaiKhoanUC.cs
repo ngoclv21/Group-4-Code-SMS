@@ -82,7 +82,7 @@ namespace EliteMart.UC
                 account.DiaChi = txtDiaChi.Text;
                 account.QueQuan = txtQueQuan.Text;
                 account.SoDienThoai = txtSoDienThoai.Text;
-                account.GioiTinh = cbxGioiTinh.Text == "Nam" ? true : false;
+                account.GioiTinh = cbxGioiTinh.Text == "Nam" ? false : true;
 
                 db.TaiKhoans.Add(account);
                 db.SaveChanges();
@@ -107,7 +107,7 @@ namespace EliteMart.UC
                 account.DiaChi = txtDiaChi.Text;
                 account.QueQuan = txtQueQuan.Text;
                 account.SoDienThoai = txtSoDienThoai.Text;
-                account.GioiTinh = cbxGioiTinh.Text == "Nam" ? true : false;
+                account.GioiTinh = cbxGioiTinh.Text == "Nam" ? false : true;
                 db.SaveChanges();
                 MessageBox.Show("Cập nhật thành công");
                 LoadDtgv();

@@ -74,7 +74,7 @@ namespace EliteMart.UC
                 supplier.DiaChi = txtDiaChi.Text;
                 supplier.QueQuan = txtQueQuan.Text;
                 supplier.SoDienThoai = txtSoDienThoai.Text;
-                supplier.GioiTinh = cbxGioiTinh.Text == "Nam" ? true : false;
+                supplier.GioiTinh = cbxGioiTinh.Text == "Nam" ? false : true;
 
                 db.NhaCungCaps.Add(supplier);
                 db.SaveChanges();
@@ -97,7 +97,7 @@ namespace EliteMart.UC
                 supplier.DiaChi = txtDiaChi.Text;
                 supplier.QueQuan = txtQueQuan.Text;
                 supplier.SoDienThoai = txtSoDienThoai.Text;
-                supplier.GioiTinh = cbxGioiTinh.Text == "Nam" ? true : false;
+                supplier.GioiTinh = cbxGioiTinh.Text == "Nam" ? false : true;
                 db.SaveChanges();
                 MessageBox.Show("Cập nhật thành công");
                 LoadDtgv();
