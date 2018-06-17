@@ -254,6 +254,14 @@ namespace EliteMart
             }
         }
 
-        
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Đồ án cửa hàng Elite Mart");
+        }
+
+        private void btnFb_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.facebook.com/mai.anhh.54");
+        }
     }
 }

@@ -91,6 +91,14 @@ namespace EliteMart.UC
                 chiTietXuat.MaHangHoa = hangHoa.MaHangHoa;
                 chiTietXuat.DonGia = hangHoa.DonGiaXuat;
                 chiTietXuats.Add(chiTietXuat);
+
+
+                if (this.phieuXuatHang != null)
+                {
+                    phieuXuatHang = db.PhieuXuatHangs.Find(phieuXuatHang.MaPhieuXuatHang);
+                    phieuXuatHang.ChiTietXuats.Add(chiTietXuat);
+                }
+
                 LoadDtgv();
             }
             catch (Exception)
@@ -105,7 +113,26 @@ namespace EliteMart.UC
             try
             {
                 int index = dtgv.SelectedRows[0].Index;
-                chiTietXuats.RemoveAt(index);
+                
+                if (this.phieuXuatHang == null)
+                {
+                    chiTietXuats.RemoveAt(index);
+                }
+                else
+                {
+
+                    foreach (var item in phieuXuatHang.ChiTietXuats.ToList())
+                    {
+                        if (item.MaChiTietXuat == chiTietXuats[index].MaChiTietXuat)
+                        {
+                            phieuXuatHang = db.PhieuXuatHangs.Find(phieuXuatHang.MaPhieuXuatHang);
+                            phieuXuatHang.ChiTietXuats.Remove(item);
+                            break;
+                        }
+                    }
+                    chiTietXuats.RemoveAt(index);
+                }
+
                 LoadDtgv();
             }
             catch (Exception)
@@ -138,16 +165,35 @@ namespace EliteMart.UC
                 TaiKhoan quanLy = db.TaiKhoans.Find(xuatHang.NguoiQuanLy);
                 xuatHang.TaiKhoan = quanLy;
                 xuatHang.NgayXuat = dtpkNgayXuat.Value;
-                xuatHang.ChiTietXuats = new List<ChiTietXuat>();
-                foreach (var item in chiTietXuats)
-                {
-                    if (item.MaChiTietXuat == 0)
-                    {
-                        xuatHang.ChiTietXuats.Add(item);
-                    }
-                }
                 db.SaveChanges();
                 MessageBox.Show("Cập nhật thành công");
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = dtgv.SelectedRows[0].Index;
+                chiTietXuats[index].SoLuong = int.Parse(txtSoLuong.Text);
+
+                if (phieuXuatHang != null)
+                {
+                    phieuXuatHang = db.PhieuXuatHangs.Find(phieuXuatHang.MaPhieuXuatHang);
+                    foreach (var item in phieuXuatHang.ChiTietXuats.ToList())
+                    {
+                        if (item.MaChiTietXuat == chiTietXuats[index].MaChiTietXuat)
+                        {
+                            item.SoLuong = int.Parse(txtSoLuong.Text);
+                            break;
+                        }
+                    }
+                }
+                LoadDtgv();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Có lỗi xảy ra!!");
             }
         }
     }

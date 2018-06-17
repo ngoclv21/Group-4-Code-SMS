@@ -48,6 +48,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtNguoiNhap = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnSua = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
             this.panel2.SuspendLayout();
@@ -113,7 +114,7 @@
             this.btnTaoPhieuNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaoPhieuNhap.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaoPhieuNhap.ForeColor = System.Drawing.Color.White;
-            this.btnTaoPhieuNhap.Location = new System.Drawing.Point(1002, 106);
+            this.btnTaoPhieuNhap.Location = new System.Drawing.Point(1002, 73);
             this.btnTaoPhieuNhap.Name = "btnTaoPhieuNhap";
             this.btnTaoPhieuNhap.Size = new System.Drawing.Size(186, 42);
             this.btnTaoPhieuNhap.TabIndex = 41;
@@ -123,6 +124,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.btnRemoveRow);
             this.panel2.Controls.Add(this.btnAddRow);
             this.panel2.Controls.Add(this.btnTaoPhieuNhap);
@@ -146,11 +148,11 @@
             this.btnRemoveRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveRow.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveRow.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveRow.Location = new System.Drawing.Point(1042, 59);
+            this.btnRemoveRow.Location = new System.Drawing.Point(1110, 13);
             this.btnRemoveRow.Name = "btnRemoveRow";
-            this.btnRemoveRow.Size = new System.Drawing.Size(117, 42);
+            this.btnRemoveRow.Size = new System.Drawing.Size(78, 42);
             this.btnRemoveRow.TabIndex = 44;
-            this.btnRemoveRow.Text = "Xóa hàng";
+            this.btnRemoveRow.Text = "Xóa";
             this.btnRemoveRow.UseVisualStyleBackColor = false;
             this.btnRemoveRow.Click += new System.EventHandler(this.btnRemoveRow_Click);
             // 
@@ -162,11 +164,11 @@
             this.btnAddRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddRow.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddRow.ForeColor = System.Drawing.Color.White;
-            this.btnAddRow.Location = new System.Drawing.Point(1042, 11);
+            this.btnAddRow.Location = new System.Drawing.Point(942, 13);
             this.btnAddRow.Name = "btnAddRow";
-            this.btnAddRow.Size = new System.Drawing.Size(117, 42);
+            this.btnAddRow.Size = new System.Drawing.Size(78, 42);
             this.btnAddRow.TabIndex = 43;
-            this.btnAddRow.Text = "Thêm hàng";
+            this.btnAddRow.Text = "Thêm";
             this.btnAddRow.UseVisualStyleBackColor = false;
             this.btnAddRow.Click += new System.EventHandler(this.btnAddRow_Click);
             // 
@@ -297,6 +299,22 @@
             this.label10.TabIndex = 42;
             this.label10.Text = "Nhà cung cấp:";
             // 
+            // btnSua
+            // 
+            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.Color.White;
+            this.btnSua.Location = new System.Drawing.Point(1026, 13);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(78, 42);
+            this.btnSua.TabIndex = 44;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
             // CreateNhapHangUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -338,5 +356,6 @@
         private System.Windows.Forms.TextBox txtHangHoa;
         private System.Windows.Forms.Button btnRemoveRow;
         private System.Windows.Forms.Button btnAddRow;
+        private System.Windows.Forms.Button btnSua;
     }
 }

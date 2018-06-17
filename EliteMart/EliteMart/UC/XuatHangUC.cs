@@ -71,6 +71,11 @@ namespace EliteMart.UC
             try
             {
                 PhieuXuatHang phieuXuatHang = db.PhieuXuatHangs.Find(int.Parse(lblMaPhieuXuat.Text));
+                if (phieuXuatHang.NgayGiaoHang != null)
+                {
+                    MessageBox.Show("Đơn hàng này đã được giao");
+                    return;
+                }
                 AppState.ManagerForm.Trigger(ScreenName.CREATE_XUAT_HANG, phieuXuatHang);
             }
             catch (Exception)

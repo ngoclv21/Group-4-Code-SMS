@@ -35,13 +35,10 @@ namespace EliteMart.UC
 
         private void CreateNhapHangUC_Load(object sender, EventArgs e)
         {
-            if (phieuNhapHang != null)
-            {
-                chiTietNhaps = phieuNhapHang.ChiTietNhaps.ToList();
-            }
             LoadDtgv();
             LoadMore();
             dtgv.DataSource = bds;
+            LoadDataBinding();
             ChangHeader();
 
             if (phieuNhapHang != null)
@@ -57,8 +54,14 @@ namespace EliteMart.UC
                 }
                 dtpkNhayNhap.Value = phieuNhapHang.NgayNhap.Value;
             }
-
         }
+
+        public void LoadDataBinding()
+        {
+            txtHangHoa.DataBindings.Add("Text", dtgv.DataSource, "MaHangHoa", true, DataSourceUpdateMode.Never);
+            txtSoLuong.DataBindings.Add("Text", dtgv.DataSource, "SoLuong", true, DataSourceUpdateMode.Never);
+        }
+
         public void ChangHeader()
         {
             dtgv.Columns["MaHangHoa"].HeaderText = "Mã hàng hóa";
@@ -69,6 +72,10 @@ namespace EliteMart.UC
 
         public void LoadDtgv()
         {
+            if (phieuNhapHang != null)
+            {
+                chiTietNhaps = phieuNhapHang.ChiTietNhaps.ToList();
+            }
             bds.DataSource = chiTietNhaps.Select(x => new { x.MaHangHoa, x.HangHoa.TenHangHoa, x.SoLuong, x.DonGia }).ToList();
         }
         public void LoadMore()
@@ -112,6 +119,12 @@ namespace EliteMart.UC
                 chiTietNhap.MaHangHoa = hangHoa.MaHangHoa;
                 chiTietNhap.DonGia = hangHoa.DonGiaNhap;
                 chiTietNhaps.Add(chiTietNhap);
+
+                if (this.phieuNhapHang != null)
+                {
+                    phieuNhapHang = db.PhieuNhapHangs.Find(phieuNhapHang.MaPhieuNhapHang);
+                    phieuNhapHang.ChiTietNhaps.Add(chiTietNhap);
+                }
                 LoadDtgv();
             }
             catch (Exception)
@@ -126,7 +139,25 @@ namespace EliteMart.UC
             try
             {
                 int index = dtgv.SelectedRows[0].Index;
-                chiTietNhaps.RemoveAt(index);
+                if (this.phieuNhapHang == null)
+                {
+                    chiTietNhaps.RemoveAt(index);
+                }
+                else
+                {
+
+                    foreach (var item in phieuNhapHang.ChiTietNhaps.ToList())
+                    {
+                        if (item.MaChiTietNhap == chiTietNhaps[index].MaChiTietNhap)
+                        {
+                            phieuNhapHang = db.PhieuNhapHangs.Find(phieuNhapHang.MaPhieuNhapHang);
+                            phieuNhapHang.ChiTietNhaps.Remove(item);
+                            break;
+                        }
+                    }
+                    chiTietNhaps.RemoveAt(index);
+                }
+                    
                 LoadDtgv();
             }
             catch (Exception)
@@ -161,21 +192,9 @@ namespace EliteMart.UC
                     TaiKhoan quanLy = db.TaiKhoans.Find(nhapHang.NguoiQuanLy);
                     nhapHang.TaiKhoan = quanLy;
                     nhapHang.NgayNhap = dtpkNhayNhap.Value;
-
-                    nhapHang.ChiTietNhaps = new List<ChiTietNhap>();
-                    foreach (var item in chiTietNhaps)
-                    {
-                        if (item.MaChiTietNhap == 0)
-                        {
-                            nhapHang.ChiTietNhaps.Add(item);
-                        }
-                    }
                     db.SaveChanges();
                     MessageBox.Show("Cập nhật thành công");
                 }
-
-
-
             }
             catch (Exception)
             {
@@ -183,6 +202,31 @@ namespace EliteMart.UC
             }
         }
 
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = dtgv.SelectedRows[0].Index;
+                chiTietNhaps[index].SoLuong = int.Parse(txtSoLuong.Text);
 
+                if(phieuNhapHang != null)
+                {
+                    phieuNhapHang = db.PhieuNhapHangs.Find(phieuNhapHang.MaPhieuNhapHang);
+                    foreach (var item in phieuNhapHang.ChiTietNhaps.ToList())
+                    {
+                        if(item.MaChiTietNhap == chiTietNhaps[index].MaChiTietNhap)
+                        {
+                            item.SoLuong = int.Parse(txtSoLuong.Text);
+                            break;
+                        }
+                    }
+                }
+                LoadDtgv();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Có lỗi xảy ra!!");
+            }
+        }
     }
 }

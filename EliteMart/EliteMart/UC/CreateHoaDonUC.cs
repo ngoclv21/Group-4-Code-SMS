@@ -134,5 +134,12 @@ namespace EliteMart.UC
                 MessageBox.Show("Có lỗi xảy ra!!!");
             }
         }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            int index = dtgv.SelectedRows[0].Index;
+            chiTietHoaDons[index].SoLuong = int.Parse(txtSoLuong.Text);
+            LoadDtgv();
+        }
     }
 }
