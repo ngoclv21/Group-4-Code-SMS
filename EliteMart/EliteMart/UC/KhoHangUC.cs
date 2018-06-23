@@ -143,5 +143,10 @@ namespace EliteMart.UC
             bds.DataSource = db.HangHoas.Select(x => new { x.MaHangHoa, x.TenHangHoa, x.DonGiaNhap, x.DonGiaXuat, x.SoLuong, x.ThanhPhan, x.DonViTinh, x }).Where(x => x.MaHangHoa.ToString().Contains(txtTimKiem.Text)
             || x.TenHangHoa.Contains(txtTimKiem.Text) || x.ThanhPhan.Contains(txtTimKiem.Text)).ToList();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

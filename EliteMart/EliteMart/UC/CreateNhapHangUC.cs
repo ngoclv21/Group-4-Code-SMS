@@ -4,8 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text; 
 using System.Windows.Forms;
 using EliteMart.EF;
 
@@ -29,9 +28,9 @@ namespace EliteMart.UC
 
         }
 
-        private AppDB db = new AppDB();
-        private BindingSource bds = new BindingSource();
-        private List<ChiTietNhap> chiTietNhaps = new List<ChiTietNhap>();
+        private AppDB db = new AppDB(); //ket noi
+        private BindingSource bds = new BindingSource(); //gtri hien thi thuc te
+        private List<ChiTietNhap> chiTietNhaps = new List<ChiTietNhap>(); //luu tru datagrid,nguon
 
         private void CreateNhapHangUC_Load(object sender, EventArgs e)
         {
