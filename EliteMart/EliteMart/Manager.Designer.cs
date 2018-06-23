@@ -77,7 +77,7 @@
             this.btnHelp.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHelp.ForeColor = System.Drawing.Color.White;
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(170, 633);
+            this.btnHelp.Location = new System.Drawing.Point(170, 923);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Size = new System.Drawing.Size(36, 34);
             this.btnHelp.TabIndex = 4;
@@ -104,7 +104,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(209, 670);
+            this.panel1.Size = new System.Drawing.Size(209, 960);
             this.panel1.TabIndex = 5;
             // 
             // btnHoaDon
@@ -284,7 +284,7 @@
             this.pn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn.Location = new System.Drawing.Point(209, 0);
             this.pn.Name = "pn";
-            this.pn.Size = new System.Drawing.Size(817, 670);
+            this.pn.Size = new System.Drawing.Size(1481, 960);
             this.pn.TabIndex = 15;
             // 
             // pnContent
@@ -292,7 +292,7 @@
             this.pnContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContent.Location = new System.Drawing.Point(0, 100);
             this.pnContent.Name = "pnContent";
-            this.pnContent.Size = new System.Drawing.Size(817, 570);
+            this.pnContent.Size = new System.Drawing.Size(1481, 860);
             this.pnContent.TabIndex = 18;
             // 
             // panel4
@@ -307,8 +307,11 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(817, 100);
+            this.panel4.Size = new System.Drawing.Size(1481, 100);
             this.panel4.TabIndex = 17;
+            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn_MouseDown);
+            this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pn_MouseMove);
+            this.panel4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pn_MouseUp);
             // 
             // panel3
             // 
@@ -319,6 +322,9 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(96, 115);
             this.panel3.TabIndex = 7;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseDown);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseMove);
+            this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseUp);
             // 
             // label2
             // 
@@ -347,7 +353,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(817, 10);
+            this.panel2.Size = new System.Drawing.Size(1481, 10);
             this.panel2.TabIndex = 15;
             // 
             // btnFb
@@ -365,6 +371,9 @@
             this.btnFb.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFb.UseVisualStyleBackColor = true;
             this.btnFb.Click += new System.EventHandler(this.btnFb_Click);
+            this.btnFb.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseDown);
+            this.btnFb.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseMove);
+            this.btnFb.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseUp);
             // 
             // label4
             // 
@@ -375,6 +384,9 @@
             this.label4.Size = new System.Drawing.Size(286, 21);
             this.label4.TabIndex = 8;
             this.label4.Text = "Quản lý cửa hàng tiện ích Elite Mart";
+            this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseDown);
+            this.label4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseMove);
+            this.label4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseUp);
             // 
             // button9
             // 
@@ -390,6 +402,9 @@
             this.button9.TabIndex = 13;
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseDown);
+            this.button9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseMove);
+            this.button9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseUp);
             // 
             // btnThoat
             // 
@@ -400,7 +415,7 @@
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(776, 25);
+            this.btnThoat.Location = new System.Drawing.Point(1440, 25);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(32, 35);
             this.btnThoat.TabIndex = 9;
@@ -422,19 +437,21 @@
             this.button10.TabIndex = 12;
             this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseDown);
+            this.button10.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseMove);
+            this.button10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lbl_MouseUp);
             // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 670);
+            this.ClientSize = new System.Drawing.Size(1690, 960);
             this.Controls.Add(this.pn);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Manager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Manager_Load);
             this.panel1.ResumeLayout(false);
             this.pn.ResumeLayout(false);

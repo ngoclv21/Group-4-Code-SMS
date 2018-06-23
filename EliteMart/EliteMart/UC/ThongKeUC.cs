@@ -89,11 +89,26 @@ namespace EliteMart.UC
                 }
             }
             double tonKho = 0;
-            foreach (var item in db.HangHoas.ToList())
+            foreach (var item in db.PhieuXuatHangs.Where(x => x.NgayGiaoHang == null))
             {
-                if(item.DonGiaNhap != null && item.SoLuong != null)
+                foreach (var item2 in item.ChiTietXuats)
                 {
-                    tonKho = item.DonGiaNhap.Value * item.SoLuong.Value;
+                    if (item2.SoLuong != null && item2.DonGia != null)
+                    {
+                        tonKho += item2.SoLuong.Value * item2.HangHoa.DonGiaNhap.Value;
+                    }
+
+                }
+            }
+            foreach (var item in db.HoaDons.Where(x => x.NgayLap != null && x.NgayLap.Value >= startDate && x.NgayLap < endDate).ToList())
+            {
+                foreach (var item2 in item.ChiTietHoaDons)
+                {
+                    if (item2.SoLuong != null && item2.DonGia != null)
+                    {
+                        tonKho += item2.SoLuong.Value * item2.HangHoa.DonGiaNhap.Value;
+                    }
+
                 }
             }
 
@@ -113,7 +128,7 @@ namespace EliteMart.UC
                 SanPhamThongKeModel model = new SanPhamThongKeModel();
                 model.SanPham = hangHoa;
                 model.SoLuongBanLe = hangHoa.ChiTietHoaDons.Where(x=> x.HoaDon.NgayLap != null && x.HoaDon.NgayLap.Value >= startDate && x.HoaDon.NgayLap < endDate).Sum(x => x.SoLuong.Value);
-                model.SoLuongTheoPhieuXuat = hangHoa.ChiTietXuats.Where(x => x.PhieuXuatHang.NgayGiaoHang != null && x.PhieuXuatHang.NgayGiaoHang.Value >= startDate && x.PhieuXuatHang.NgayGiaoHang < endDate).Sum(x => x.SoLuong.Value);
+                model.SoLuongTheoPhieuXuat = hangHoa.ChiTietXuats.Where(x => x.PhieuXuatHang != null && x.PhieuXuatHang.NgayGiaoHang != null && x.PhieuXuatHang.NgayGiaoHang.Value >= startDate && x.PhieuXuatHang.NgayGiaoHang < endDate).Sum(x => x.SoLuong.Value);
                 model.Tong = model.SoLuongTheoPhieuXuat + model.SoLuongBanLe;
                 list.Add(model);
 

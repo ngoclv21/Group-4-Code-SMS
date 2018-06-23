@@ -15,6 +15,58 @@ namespace EliteMart
 {
     public partial class Manager : Form, Triggerable
     {
+
+        #region menu
+        private bool isMouseDown = false;
+        private int x, y;
+
+        private void pn_MouseDown(object sender, MouseEventArgs e)
+        {
+            isMouseDown = true;
+            x = e.X;
+            y = e.Y;
+        }
+
+        private void pn_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMouseDown)
+            {
+                this.Location = new Point(this.Location.X + e.X - x, this.Location.Y + e.Y - y);
+            }
+        }
+
+        private void pn_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDown = false;
+        }
+
+        private void lbl_MouseDown(object sender, MouseEventArgs e)
+        {
+            isMouseDown = true;
+            x = e.X;
+            y = e.Y;
+        }
+
+        private void lbl_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMouseDown)
+            {
+                this.Location = new Point(this.Location.X + e.X - x, this.Location.Y + e.Y - y);
+            }
+        }
+
+        private void lbl_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDown = false;
+        }
+
+        private void btnMinimum_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        #endregion
+
         public Manager()
         {
             InitializeComponent();
@@ -44,16 +96,16 @@ namespace EliteMart
                 switch (maLoaiTaiKhoan)
                 {
                     case Role.NHAN_VIEN:
-                        btnThongKe.Visible = false;
-                        btnTaiKhoan.Visible = false;
-                        btnNhaCungCap.Visible = false;
-                        btnXuatHang.Visible = false;
-                        btnNhapHang.Visible = false;
+                        btnThongKe.ForeColor = Color.Gray;
+                        btnTaiKhoan.ForeColor = Color.Gray;
+                        btnNhaCungCap.ForeColor = Color.Gray;
+                        btnXuatHang.ForeColor = Color.Gray;
+                        btnNhapHang.ForeColor = Color.Gray;
                         break;
                     case Role.THU_KHO:
-                        btnThongKe.Visible = false;
-                        btnTaiKhoan.Visible = false;
-                        btnNhaCungCap.Visible = false;
+                        btnThongKe.ForeColor = Color.Gray;
+                        btnTaiKhoan.ForeColor = Color.Gray;
+                        btnNhaCungCap.ForeColor = Color.Gray;
                         break;
                     default:
                         break;
@@ -65,8 +117,23 @@ namespace EliteMart
             }
         }
 
+        private bool checkRole(object sender)
+        {
+            Button s = sender as Button;
+            if (s.ForeColor == Color.Gray)
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void btnHome_Click(object sender, EventArgs e)
         {
+            if(!checkRole(sender))
+            {
+                return;
+            }
+
             SidePanel.Height = btnHome.Height;
             SidePanel.Top = btnHome.Top;
             HomeUC uc = new HomeUC();
@@ -79,6 +146,10 @@ namespace EliteMart
 
         private void btnKhoHang_Click(object sender, EventArgs e)
         {
+            if (!checkRole(sender))
+            {
+                return;
+            }
             SidePanel.Height = btnKhoHang.Height;
             SidePanel.Top = btnKhoHang.Top;
             KhoHangUC uc = new KhoHangUC();
@@ -91,6 +162,10 @@ namespace EliteMart
 
         private void btnNhapHang_Click(object sender, EventArgs e)
         {
+            if (!checkRole(sender))
+            {
+                return;
+            }
             SidePanel.Height = btnNhapHang.Height;
             SidePanel.Top = btnNhapHang.Top;
             NhapHangUC uc = new NhapHangUC();
@@ -103,6 +178,10 @@ namespace EliteMart
 
         private void btnXuatHang_Click(object sender, EventArgs e)
         {
+            if (!checkRole(sender))
+            {
+                return;
+            }
             SidePanel.Height = btnXuatHang.Height;
             SidePanel.Top = btnXuatHang.Top;
             XuatHangUC uc = new XuatHangUC();
@@ -115,6 +194,10 @@ namespace EliteMart
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
+            if (!checkRole(sender))
+            {
+                return;
+            }
             SidePanel.Height = btnKhachHang.Height;
             SidePanel.Top = btnKhachHang.Top;
             KhachHangUC uc = new KhachHangUC();
@@ -127,6 +210,10 @@ namespace EliteMart
 
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
+            if (!checkRole(sender))
+            {
+                return;
+            }
             SidePanel.Height = btnNhaCungCap.Height;
             SidePanel.Top = btnNhaCungCap.Top;
             NhaCungCapUC uc = new NhaCungCapUC();
@@ -139,6 +226,10 @@ namespace EliteMart
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
+            if (!checkRole(sender))
+            {
+                return;
+            }
             SidePanel.Height = btnHoaDon.Height;
             SidePanel.Top = btnHoaDon.Top;
             HoaDonUC uc = new HoaDonUC();
@@ -151,6 +242,10 @@ namespace EliteMart
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
+            if (!checkRole(sender))
+            {
+                return;
+            }
             SidePanel.Height = btnTaiKhoan.Height;
             SidePanel.Top = btnTaiKhoan.Top;
             TaiKhoanUC uc = new TaiKhoanUC();
@@ -163,6 +258,10 @@ namespace EliteMart
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
+            if (!checkRole(sender))
+            {
+                return;
+            }
             SidePanel.Height = btnThongKe.Height;
             SidePanel.Top = btnThongKe.Top;
             ThongKeUC uc = new ThongKeUC();
@@ -174,6 +273,10 @@ namespace EliteMart
         }
         private void btnThongTinCaNhan_Click(object sender, EventArgs e)
         {
+            if (!checkRole(sender))
+            {
+                return;
+            }
             SidePanel.Height = btnThongTinCaNhan.Height;
             SidePanel.Top = btnThongTinCaNhan.Top;
             ThongTinCaNhanUC uc = new ThongTinCaNhanUC();
