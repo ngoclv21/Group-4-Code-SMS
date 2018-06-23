@@ -141,5 +141,10 @@ namespace EliteMart.UC
             chiTietHoaDons[index].SoLuong = int.Parse(txtSoLuong.Text);
             LoadDtgv();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

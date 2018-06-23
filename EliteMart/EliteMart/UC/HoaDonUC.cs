@@ -85,6 +85,25 @@ namespace EliteMart.UC
             printTool.ShowPreview();
         }
 
-        
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HoaDon hoaDon = db.HoaDons.Find(int.Parse(lblMaHoaDon.Text));
+                db.HoaDons.Remove(hoaDon);
+                db.SaveChanges();
+                LoadDtgv();
+                MessageBox.Show("Xóa thành công");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Có lỗi xảy ra");
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
