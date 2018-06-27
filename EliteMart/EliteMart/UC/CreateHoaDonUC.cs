@@ -75,7 +75,7 @@ namespace EliteMart.UC
                 HangHoa hangHoa = db.HangHoas.Find(int.Parse(txtHangHoa.Text.Split('-')[0]));
                 chiTietHoaDon.HangHoa = hangHoa;
                 chiTietHoaDon.MaHangHoa = hangHoa.MaHangHoa;
-                chiTietHoaDon.DonGia = hangHoa.DonGiaXuat;
+                chiTietHoaDon.DonGia = hangHoa.GiaBanLe;
                 chiTietHoaDons.Add(chiTietHoaDon);
                 LoadDtgv();
             }

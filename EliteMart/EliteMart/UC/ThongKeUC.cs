@@ -17,8 +17,30 @@ namespace EliteMart.UC
         private double nhapHang, xuatHang, hoaDon;
         private AppDB db = new AppDB();
 
+        private void Enable(Button btn)
+        {
+            btnTKTheoNam.Enabled = true;
+            btnTKTheoNam.FlatAppearance.BorderSize = 0;
+            btnTKTheoNam.BackColor = Color.FromArgb(178, 8, 55);
+
+            btnTkTheoThang.Enabled = true;
+            btnTkTheoThang.FlatAppearance.BorderSize = 0;
+            btnTkTheoThang.BackColor = Color.FromArgb(178, 8, 55);
+
+            btnTKTheoQuy.Enabled = true;
+            btnTKTheoQuy.FlatAppearance.BorderSize = 0;
+            btnTKTheoQuy.BackColor = Color.FromArgb(178, 8, 55);
+
+            btn.Enabled = false;
+
+            btn.FlatAppearance.BorderSize = 1;
+            btn.FlatAppearance.BorderColor = Color.FromArgb(178, 8, 55);
+            btn.BackColor = Color.Transparent;
+        }
+
         private void btnTkTheoThang_Click(object sender, EventArgs e)
         {
+            Enable(sender as Button);
             DateTime date = DateTime.Now;
             var startDate = new DateTime(date.Year, date.Month, 1);
             var endDate = startDate.AddMonths(1).AddDays(-1);
@@ -27,6 +49,7 @@ namespace EliteMart.UC
 
         private void btnTKTheoQuy_Click(object sender, EventArgs e)
         {
+            Enable(sender as Button);
             DateTime date = DateTime.Now;
             var startDate = new DateTime(date.Year, date.Month, 1);
             var endDate = startDate.AddMonths(1).AddDays(-1);
@@ -36,6 +59,7 @@ namespace EliteMart.UC
 
         private void btnTKTheoNam_Click(object sender, EventArgs e)
         {
+            Enable(sender as Button);
             DateTime date = DateTime.Now;
             var startDate = new DateTime(date.Year, date.Month, 1);
             var endDate = startDate.AddMonths(1).AddDays(-1);

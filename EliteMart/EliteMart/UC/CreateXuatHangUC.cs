@@ -89,9 +89,8 @@ namespace EliteMart.UC
                 HangHoa hangHoa = db.HangHoas.Find(int.Parse(txtHangHoa.Text.Split('-')[0]));
                 chiTietXuat.HangHoa = hangHoa;
                 chiTietXuat.MaHangHoa = hangHoa.MaHangHoa;
-                chiTietXuat.DonGia = hangHoa.DonGiaXuat;
+                chiTietXuat.DonGia = hangHoa.GiaBanBuon;
                 chiTietXuats.Add(chiTietXuat);
-
 
                 if (this.phieuXuatHang != null)
                 {

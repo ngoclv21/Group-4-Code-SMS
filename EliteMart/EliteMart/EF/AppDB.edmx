@@ -41,12 +41,12 @@
           </Key>
           <Property Name="MaHangHoa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenHangHoa" Type="nvarchar" MaxLength="255" />
-          <Property Name="DonGia" Type="float" />
           <Property Name="SoLuong" Type="int" />
           <Property Name="ThanhPhan" Type="nvarchar" MaxLength="255" />
           <Property Name="DonViTinh" Type="nvarchar" MaxLength="255" />
           <Property Name="DonGiaNhap" Type="float" />
-          <Property Name="DonGiaXuat" Type="float" />
+          <Property Name="GiaBanLe" Type="float" />
+          <Property Name="GiaBanBuon" Type="float" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
@@ -413,7 +413,6 @@
           </Key>
           <Property Name="MaHangHoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenHangHoa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="DonGia" Type="Double" />
           <Property Name="SoLuong" Type="Int32" />
           <Property Name="ThanhPhan" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="DonViTinh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
@@ -421,7 +420,8 @@
           <NavigationProperty Name="ChiTietNhaps" Relationship="Self.FK__ChiTietNh__MaHan__2D27B809" FromRole="HangHoa" ToRole="ChiTietNhap" />
           <NavigationProperty Name="ChiTietXuats" Relationship="Self.FK__ChiTietXu__MaHan__2F10007B" FromRole="HangHoa" ToRole="ChiTietXuat" />
           <Property Name="DonGiaNhap" Type="Double" />
-          <Property Name="DonGiaXuat" Type="Double" />
+          <Property Name="GiaBanLe" Type="Double" />
+          <Property Name="GiaBanBuon" Type="Double" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
@@ -777,11 +777,11 @@
           <EntitySetMapping Name="HangHoas">
             <EntityTypeMapping TypeName="EliteMartModel.HangHoa">
               <MappingFragment StoreEntitySet="HangHoa">
-                <ScalarProperty Name="DonGiaXuat" ColumnName="DonGiaXuat" />
+                <ScalarProperty Name="GiaBanBuon" ColumnName="GiaBanBuon" />
+                <ScalarProperty Name="GiaBanLe" ColumnName="GiaBanLe" />
                 <ScalarProperty Name="DonGiaNhap" ColumnName="DonGiaNhap" />
                 <ScalarProperty Name="MaHangHoa" ColumnName="MaHangHoa" />
                 <ScalarProperty Name="TenHangHoa" ColumnName="TenHangHoa" />
-                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
                 <ScalarProperty Name="ThanhPhan" ColumnName="ThanhPhan" />
                 <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />

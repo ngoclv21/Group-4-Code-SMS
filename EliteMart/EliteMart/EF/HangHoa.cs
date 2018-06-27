@@ -24,12 +24,12 @@ namespace EliteMart.EF
     
         public int MaHangHoa { get; set; }
         public string TenHangHoa { get; set; }
-        public Nullable<double> DonGia { get; set; }
         public Nullable<int> SoLuong { get; set; }
         public string ThanhPhan { get; set; }
         public string DonViTinh { get; set; }
         public Nullable<double> DonGiaNhap { get; set; }
-        public Nullable<double> DonGiaXuat { get; set; }
+        public Nullable<double> GiaBanLe { get; set; }
+        public Nullable<double> GiaBanBuon { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }

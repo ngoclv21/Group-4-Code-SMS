@@ -34,14 +34,15 @@ namespace EliteMart.UC
 
         public void LoadDtgv()
         {
-            bds.DataSource = db.HangHoas.Select(x => new { x.MaHangHoa, x.TenHangHoa, x.DonGiaNhap, x.DonGiaXuat, x.SoLuong, x.ThanhPhan, x.DonViTinh ,x }).ToList();
+            bds.DataSource = db.HangHoas.Select(x => new { x.MaHangHoa, x.TenHangHoa, x.DonGiaNhap, x.GiaBanLe, x.GiaBanBuon, x.SoLuong, x.ThanhPhan, x.DonViTinh ,x }).ToList();
         }
         public void ChangHeader()
         {
             dtgv.Columns["MaHangHoa"].HeaderText = "Mã hàng hóa";
             dtgv.Columns["TenHangHoa"].HeaderText = "Tên hàng hóa";
             dtgv.Columns["DonGiaNhap"].HeaderText = "Đơn giá nhập";
-            dtgv.Columns["DonGiaXuat"].HeaderText = "Đơn giá xuất";
+            dtgv.Columns["GiaBanLe"].HeaderText = "Giá bán lẻ";
+            dtgv.Columns["GiaBanBuon"].HeaderText = "Giá bán buôn";
             dtgv.Columns["SoLuong"].HeaderText = "Số lượng";
             dtgv.Columns["ThanhPhan"].HeaderText = "Thành phần";
             dtgv.Columns["DonViTinh"].HeaderText = "Đơn vị tính";
@@ -56,7 +57,8 @@ namespace EliteMart.UC
             txtTenHangHoa.DataBindings.Add("Text", dtgv.DataSource, "TenHangHoa", true, DataSourceUpdateMode.Never);
             txtDonViTinh.DataBindings.Add("Text", dtgv.DataSource, "DonViTinh", true, DataSourceUpdateMode.Never);
             txtDonGiaNhap.DataBindings.Add("Text", dtgv.DataSource, "DonGiaNhap", true, DataSourceUpdateMode.Never);
-            txtDonGiaXuat.DataBindings.Add("Text", dtgv.DataSource, "DonGiaXuat", true, DataSourceUpdateMode.Never);
+            txtGiaBanLe.DataBindings.Add("Text", dtgv.DataSource, "GiaBanLe", true, DataSourceUpdateMode.Never);
+            txtGiaBanBuon.DataBindings.Add("Text", dtgv.DataSource, "GiaBanBuon", true, DataSourceUpdateMode.Never);
             txtThanhPhan.DataBindings.Add("Text", dtgv.DataSource, "ThanhPhan", true, DataSourceUpdateMode.Never);
             txtSoLuong.DataBindings.Add("Text", dtgv.DataSource, "SoLuong", true, DataSourceUpdateMode.Never);
         }
@@ -76,7 +78,8 @@ namespace EliteMart.UC
                 hangHoa.ThanhPhan = txtThanhPhan.Text;
                 hangHoa.SoLuong = int.Parse(txtSoLuong.Text);
                 hangHoa.DonGiaNhap = double.Parse(txtDonGiaNhap.Text);
-                hangHoa.DonGiaXuat = double.Parse(txtDonGiaXuat.Text);
+                hangHoa.GiaBanLe = double.Parse(txtGiaBanLe.Text);
+                hangHoa.GiaBanBuon = double.Parse(txtGiaBanBuon.Text);
 
                 db.HangHoas.Add(hangHoa);
                 db.SaveChanges();
@@ -99,7 +102,8 @@ namespace EliteMart.UC
                 hangHoa.ThanhPhan = txtThanhPhan.Text;
                 //hangHoa.SoLuong = int.Parse(txtSoLuong.Text);
                 hangHoa.DonGiaNhap = double.Parse(txtDonGiaNhap.Text);
-                hangHoa.DonGiaXuat = double.Parse(txtDonGiaXuat.Text);
+                hangHoa.GiaBanLe = double.Parse(txtGiaBanLe.Text);
+                hangHoa.GiaBanBuon = double.Parse(txtGiaBanBuon.Text);
                 db.SaveChanges();
                 MessageBox.Show("Cập nhật thành công");
                 LoadDtgv();
@@ -140,7 +144,7 @@ namespace EliteMart.UC
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            bds.DataSource = db.HangHoas.Select(x => new { x.MaHangHoa, x.TenHangHoa, x.DonGiaNhap, x.DonGiaXuat, x.SoLuong, x.ThanhPhan, x.DonViTinh, x }).Where(x => x.MaHangHoa.ToString().Contains(txtTimKiem.Text)
+            bds.DataSource = db.HangHoas.Select(x => new { x.MaHangHoa, x.TenHangHoa, x.DonGiaNhap, x.GiaBanLe, x.GiaBanBuon, x.SoLuong, x.ThanhPhan, x.DonViTinh, x }).Where(x => x.MaHangHoa.ToString().Contains(txtTimKiem.Text)
             || x.TenHangHoa.Contains(txtTimKiem.Text) || x.ThanhPhan.Contains(txtTimKiem.Text)).ToList();
         }
 

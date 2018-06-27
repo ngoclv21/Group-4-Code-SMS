@@ -51,9 +51,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.txtDonGiaXuat = new System.Windows.Forms.TextBox();
+            this.txtGiaBanLe = new System.Windows.Forms.TextBox();
             this.txtDonGiaNhap = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtGiaBanBuon = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -125,7 +127,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(353, 85);
+            this.label5.Location = new System.Drawing.Point(53, 171);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 23);
             this.label5.TabIndex = 42;
@@ -135,7 +137,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(370, 40);
+            this.label4.Location = new System.Drawing.Point(70, 126);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 23);
             this.label4.TabIndex = 42;
@@ -145,7 +147,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(29, 121);
+            this.label3.Location = new System.Drawing.Point(344, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 23);
             this.label3.TabIndex = 42;
@@ -184,7 +186,7 @@
             // txtDonViTinh
             // 
             this.txtDonViTinh.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonViTinh.Location = new System.Drawing.Point(464, 79);
+            this.txtDonViTinh.Location = new System.Drawing.Point(164, 165);
             this.txtDonViTinh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDonViTinh.Name = "txtDonViTinh";
             this.txtDonViTinh.Size = new System.Drawing.Size(170, 31);
@@ -303,13 +305,15 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtThanhPhan);
             this.panel2.Controls.Add(this.l);
             this.panel2.Controls.Add(this.txtSoLuong);
-            this.panel2.Controls.Add(this.txtDonGiaXuat);
+            this.panel2.Controls.Add(this.txtGiaBanBuon);
+            this.panel2.Controls.Add(this.txtGiaBanLe);
             this.panel2.Controls.Add(this.txtDonGiaNhap);
             this.panel2.Controls.Add(this.txtDonViTinh);
             this.panel2.Controls.Add(this.txtTenHangHoa);
@@ -330,34 +334,34 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(346, 124);
+            this.label1.Location = new System.Drawing.Point(371, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 23);
+            this.label1.Size = new System.Drawing.Size(90, 23);
             this.label1.TabIndex = 42;
-            this.label1.Text = "Đơn giá xuất:";
+            this.label1.Text = "Giá bán lẻ:";
             // 
             // txtSoLuong
             // 
             this.txtSoLuong.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoLuong.Location = new System.Drawing.Point(464, 38);
+            this.txtSoLuong.Location = new System.Drawing.Point(164, 124);
             this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(170, 31);
             this.txtSoLuong.TabIndex = 40;
             // 
-            // txtDonGiaXuat
+            // txtGiaBanLe
             // 
-            this.txtDonGiaXuat.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonGiaXuat.Location = new System.Drawing.Point(464, 121);
-            this.txtDonGiaXuat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtDonGiaXuat.Name = "txtDonGiaXuat";
-            this.txtDonGiaXuat.Size = new System.Drawing.Size(170, 31);
-            this.txtDonGiaXuat.TabIndex = 40;
+            this.txtGiaBanLe.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaBanLe.Location = new System.Drawing.Point(477, 77);
+            this.txtGiaBanLe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGiaBanLe.Name = "txtGiaBanLe";
+            this.txtGiaBanLe.Size = new System.Drawing.Size(170, 31);
+            this.txtGiaBanLe.TabIndex = 40;
             // 
             // txtDonGiaNhap
             // 
             this.txtDonGiaNhap.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonGiaNhap.Location = new System.Drawing.Point(164, 119);
+            this.txtDonGiaNhap.Location = new System.Drawing.Point(477, 37);
             this.txtDonGiaNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDonGiaNhap.Name = "txtDonGiaNhap";
             this.txtDonGiaNhap.Size = new System.Drawing.Size(170, 31);
@@ -374,6 +378,25 @@
             this.panel1.Size = new System.Drawing.Size(1200, 90);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // txtGiaBanBuon
+            // 
+            this.txtGiaBanBuon.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaBanBuon.Location = new System.Drawing.Point(477, 123);
+            this.txtGiaBanBuon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtGiaBanBuon.Name = "txtGiaBanBuon";
+            this.txtGiaBanBuon.Size = new System.Drawing.Size(170, 31);
+            this.txtGiaBanBuon.TabIndex = 40;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(345, 126);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(117, 23);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "Giá bán buôn:";
             // 
             // KhoHangUC
             // 
@@ -421,6 +444,8 @@
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.TextBox txtDonGiaNhap;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtDonGiaXuat;
+        private System.Windows.Forms.TextBox txtGiaBanLe;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtGiaBanBuon;
     }
 }
