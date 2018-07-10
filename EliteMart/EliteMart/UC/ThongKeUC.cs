@@ -53,7 +53,7 @@ namespace EliteMart.UC
             DateTime date = DateTime.Now;
             var startDate = new DateTime(date.Year, date.Month, 1);
             var endDate = startDate.AddMonths(1).AddDays(-1);
-            startDate.AddMonths(-3);
+            startDate = startDate.AddMonths(-3);
             ThongKe(startDate, endDate);
         }
 
@@ -63,7 +63,7 @@ namespace EliteMart.UC
             DateTime date = DateTime.Now;
             var startDate = new DateTime(date.Year, date.Month, 1);
             var endDate = startDate.AddMonths(1).AddDays(-1);
-            startDate.AddYears(-1);
+            startDate = startDate.AddYears(-1);
             ThongKe(startDate, endDate);
         }
 
