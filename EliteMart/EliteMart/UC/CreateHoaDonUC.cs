@@ -59,7 +59,7 @@ namespace EliteMart.UC
             List<HangHoa> hangHoas = db.HangHoas.ToList();
             foreach (var item in hangHoas)
             {
-                sourceHangHoas.Add(item.MaHangHoa + " - " + item.TenHangHoa);
+                sourceHangHoas.Add(item.TenHangHoa + " - " + item.MaHangHoa);
             }
             txtHangHoa.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             txtHangHoa.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -72,7 +72,7 @@ namespace EliteMart.UC
             {
                 ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
                 chiTietHoaDon.SoLuong = int.Parse(txtSoLuong.Text);
-                HangHoa hangHoa = db.HangHoas.Find(int.Parse(txtHangHoa.Text.Split('-')[0]));
+                HangHoa hangHoa = db.HangHoas.Find(int.Parse(txtHangHoa.Text.Split('-')[1]));
                 chiTietHoaDon.HangHoa = hangHoa;
                 chiTietHoaDon.MaHangHoa = hangHoa.MaHangHoa;
                 chiTietHoaDon.DonGia = hangHoa.GiaBanLe;

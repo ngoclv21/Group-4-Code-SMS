@@ -65,7 +65,7 @@ namespace EliteMart.UC
 
             //list tài khoản
             var sourceTaiKhoans = new AutoCompleteStringCollection();
-            List<TaiKhoan> taiKhoans = db.TaiKhoans.ToList();
+            List<TaiKhoan> taiKhoans = db.TaiKhoans.Where(x => x.MaLoaiTaiKhoan == 1).ToList(); // hard code 1 == quản lý
             foreach (var item in taiKhoans)
             {
                 sourceTaiKhoans.Add(item.TenDangNhap + " - " + item.HoTen);
