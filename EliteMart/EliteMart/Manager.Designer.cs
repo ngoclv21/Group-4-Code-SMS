@@ -119,7 +119,7 @@
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(197, 54);
             this.btnHoaDon.TabIndex = 4;
-            this.btnHoaDon.Text = "       Hóa đơn";
+            this.btnHoaDon.Text = "        HĐ Bán Lẻ";
             this.btnHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHoaDon.UseVisualStyleBackColor = true;
             this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
@@ -204,7 +204,7 @@
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.Size = new System.Drawing.Size(197, 54);
             this.btnKhachHang.TabIndex = 4;
-            this.btnKhachHang.Text = "       Khách hàng";
+            this.btnKhachHang.Text = "     KH thân thiết";
             this.btnKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnKhachHang.UseVisualStyleBackColor = true;
             this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
@@ -294,6 +294,7 @@
             this.pnContent.Name = "pnContent";
             this.pnContent.Size = new System.Drawing.Size(1481, 860);
             this.pnContent.TabIndex = 18;
+            this.pnContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnContent_Paint);
             // 
             // panel4
             // 
@@ -309,6 +310,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1481, 100);
             this.panel4.TabIndex = 17;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn_MouseDown);
             this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pn_MouseMove);
             this.panel4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pn_MouseUp);

@@ -362,6 +362,16 @@ namespace EliteMart
             MessageBox.Show("Đồ án cửa hàng Elite Mart");
         }
 
+        private void pnContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btnFb_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.facebook.com/mai.anhh.54");
