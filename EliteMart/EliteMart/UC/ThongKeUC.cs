@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EliteMart.EF;
 using EliteMart.AppCode;
+using EliteMart.SpreetSeed;
 
 namespace EliteMart.UC
 {
     public partial class ThongKeUC : UserControl
     {
-        private double nhapHang, xuatHang, hoaDon;
+        private ReportByTimeModel model = new ReportByTimeModel();
         private AppDB db = new AppDB();
+
 
         private void Enable(Button btn)
         {
@@ -45,6 +47,7 @@ namespace EliteMart.UC
             var startDate = new DateTime(date.Year, date.Month, 1);
             var endDate = startDate.AddMonths(1).AddDays(-1);
             ThongKe(startDate, endDate);
+            model.TheoLoai = "theo tháng";
         }
 
         private void btnTKTheoQuy_Click(object sender, EventArgs e)
@@ -55,6 +58,7 @@ namespace EliteMart.UC
             var endDate = startDate.AddMonths(1).AddDays(-1);
             startDate = startDate.AddMonths(-3);
             ThongKe(startDate, endDate);
+            model.TheoLoai = "theo quý";
         }
 
         private void btnTKTheoNam_Click(object sender, EventArgs e)
@@ -65,6 +69,7 @@ namespace EliteMart.UC
             var endDate = startDate.AddMonths(1).AddDays(-1);
             startDate = startDate.AddYears(-1);
             ThongKe(startDate, endDate);
+            model.TheoLoai = "theo năm";
         }
 
         private void ThongKe(DateTime startDate, DateTime endDate)
@@ -170,6 +175,18 @@ namespace EliteMart.UC
             lblWorstBanLe.Text = worst.SoLuongBanLe.ToString();
             lblWorstDonXuat.Text = worst.SoLuongTheoPhieuXuat.ToString();
 
+            model.SanPhamBanChayNhat = best.SanPham.TenHangHoa;
+            model.SanPhamBanKemNhat = worst.SanPham.TenHangHoa;
+            model.SoTienNhapHang = nhapHang;
+            model.DoanhThu = doanhThu;
+            model.SoTienXuatHang = xuatHang;
+            model.TienBanLe = hoaDon;
+            model.TonKho = tonKho;
+            model.ChayNhatBanLe = best.SoLuongBanLe.ToString();
+            model.ChayNhatTheoDonXuat = best.SoLuongTheoPhieuXuat.ToString();
+            model.KemNhatBanLe = worst.SoLuongBanLe.ToString();
+            model.KemNhatTheoDonXuat = worst.SoLuongTheoPhieuXuat.ToString();
+
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -177,21 +194,62 @@ namespace EliteMart.UC
 
         }
 
+<<<<<<< HEAD
         private void lblDoanhThu_Click(object sender, EventArgs e)
         {
 
+=======
+        private void btnCalculateQtyFromSupplier_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                NhaCungCap nhaCungCap = db.NhaCungCaps.Find(int.Parse(cbxNhaCungCap.SelectedValue.ToString()));
+                int quantity = 0;
+                foreach (var item in nhaCungCap.PhieuNhapHangs)
+                {
+                    quantity += item.ChiTietNhaps.Sum(x => x.SoLuong).Value;
+                }
+
+                lblQtyFromSupplier.Text = quantity.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Có lỗi xảy ra!!!");
+            }
+        }
+
+        private void btnPrintByTime_Click(object sender, EventArgs e)
+        {
+            ReportByTimeSpreedSheet form = new ReportByTimeSpreedSheet(model);
+            form.Show();
+        }
+
+        private void btnPrintBySupplier_Click(object sender, EventArgs e)
+        {
+
+            ReportBySupplierSpreadSheet form = new ReportBySupplierSpreadSheet(cbxNhaCungCap.SelectedValue.ToString());
+            form.Show();
+>>>>>>> 2cd93d01c00b05c2060c25b9951494f375c7c4dc
         }
 
         public ThongKeUC()
         {
             InitializeComponent();
+            LoadMore();
         }
 
+        private void LoadMore()
+        {
+            //Nhà cung cấp
+            cbxNhaCungCap.DataSource = db.NhaCungCaps.ToList();
+            cbxNhaCungCap.DisplayMember = "HoTen";
+            cbxNhaCungCap.ValueMember = "MaNhaCungCap";
+        }
         public void View()
         {
-            lblNhapHang.Text = nhapHang.ToString("#,###", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"));
-            lblXuatHang.Text = xuatHang.ToString("#,###", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"));
-            lblHoaDon.Text = hoaDon.ToString("#,###", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"));
+            //lblNhapHang.Text = nhapHang.ToString("#,###", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"));
+            //lblXuatHang.Text = xuatHang.ToString("#,###", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"));
+            //lblHoaDon.Text = hoaDon.ToString("#,###", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"));
         }
 
 
