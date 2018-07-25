@@ -194,11 +194,6 @@ namespace EliteMart.UC
 
         }
 
-<<<<<<< HEAD
-        private void lblDoanhThu_Click(object sender, EventArgs e)
-        {
-
-=======
         private void btnCalculateQtyFromSupplier_Click(object sender, EventArgs e)
         {
             try
@@ -229,7 +224,6 @@ namespace EliteMart.UC
 
             ReportBySupplierSpreadSheet form = new ReportBySupplierSpreadSheet(cbxNhaCungCap.SelectedValue.ToString());
             form.Show();
->>>>>>> 2cd93d01c00b05c2060c25b9951494f375c7c4dc
         }
 
         public ThongKeUC()
