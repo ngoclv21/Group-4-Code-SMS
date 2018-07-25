@@ -222,7 +222,7 @@ namespace EliteMart.UC
         private void btnPrintBySupplier_Click(object sender, EventArgs e)
         {
 
-            ReportBySupplierSpreadSheet form = new ReportBySupplierSpreadSheet();
+            ReportBySupplierSpreadSheet form = new ReportBySupplierSpreadSheet(cbxNhaCungCap.SelectedValue.ToString());
             form.Show();
         }
 
