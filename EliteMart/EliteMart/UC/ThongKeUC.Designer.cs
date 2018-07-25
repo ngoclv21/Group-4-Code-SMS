@@ -167,6 +167,7 @@
             this.lblDoanhThu.Size = new System.Drawing.Size(37, 39);
             this.lblDoanhThu.TabIndex = 43;
             this.lblDoanhThu.Text = "[]";
+            this.lblDoanhThu.Click += new System.EventHandler(this.lblDoanhThu_Click);
             // 
             // lblHoaDon
             // 
