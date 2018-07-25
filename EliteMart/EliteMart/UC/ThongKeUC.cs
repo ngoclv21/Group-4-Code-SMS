@@ -177,6 +177,11 @@ namespace EliteMart.UC
 
         }
 
+        private void lblDoanhThu_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public ThongKeUC()
         {
             InitializeComponent();
