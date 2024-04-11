@@ -1,0 +1,1 @@
+DBCC CHECKIDENT ('KhachHang', RESEED, 0);
